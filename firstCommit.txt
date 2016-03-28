@@ -1,0 +1,10 @@
+/*
+author: Fernando Avalos
+
+*/
+
+int main(){
+
+	cout << " Fernandos part"endl;
+	return 0;
+}
