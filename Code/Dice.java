@@ -1,5 +1,19 @@
 import java.util.*;
 
+/**
+ * Class to implement random dice rolls.  
+ * 		private int minimum initialized to 1 (lowest number on dice). 
+ * 		private int maximum initialized to 6 (highest number on dice).
+ * 		Default initialization for private int numOfDice and private int list[].
+ * 
+ * @author CSE360 Spring 2016 Team 44: Fernando Avalos,
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
+ * @version April 15, 2016
+ * 
+ */
 public class Dice
 {
 	
@@ -9,6 +23,12 @@ public class Dice
 	private int numOfDice;
 	private int list[];
 
+	/**
+	 * Dice - Constructor initializes the number of dice being rolled and 
+	 * 			the array size of list to the number of dice being rolled. 
+	 * 				
+	 * @param numOfDice int the number of dice being rolled.  
+	 */
 	Dice(int numOfDice)
 	{
 		
@@ -18,6 +38,13 @@ public class Dice
 		
 	}
 
+	/**
+	 * rollDice - public method that iterates through the list array inserting a roll value
+	 * 				until the number of dice rolled has been reached.
+	 * 						
+	 * @param none
+	 * @return list int[] the list of face values of each die rolled. 
+	 */
 	public int[] rollDice()
 	{
 		
@@ -25,12 +52,20 @@ public class Dice
 		{
 			
 			list[index] = roll();
+			
 		}
 
 		return list;
 		
 	}
 
+	/**
+	 * roll - private method that generates a random number from 1 (the minimum value of a die)
+	 * 				to 6 (the maximum value of a die).
+	 * 				
+	 * @param none
+	 * @return value int a random number between 1 and 6. 
+	 */
 	private int roll()
 	{
 
