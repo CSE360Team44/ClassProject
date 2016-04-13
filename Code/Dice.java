@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Dice
 {
+	
 	private int minimum = 1;
 	private int maximum = 6;
 
@@ -10,12 +11,16 @@ public class Dice
 
 	Dice(int numOfDice)
 	{
+		
 		this.numOfDice = numOfDice;
 		list = new int[numOfDice];
+	
+		
 	}
 
 	public int[] rollDice()
 	{
+		
 		for(int index = 0; index < numOfDice; index++)
 		{
 			
