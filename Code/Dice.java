@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Dice
 {
-  private int minimum = 1;
+	private int minimum = 1;
 	private int maximum = 6;
 
 	private int numOfDice;
@@ -10,18 +10,20 @@ public class Dice
 
 	Dice(int numOfDice)
 	{
-		this.numOfDice =numOfDice;
+		this.numOfDice = numOfDice;
 		list = new int[numOfDice];
 	}
 
 	public int[] rollDice()
 	{
-		for(int i=0;i < numOfDice;i++)
-			list[i] = roll();
-
+		for(int index = 0; index < numOfDice; index++)
+		{
+			
+			list[index] = roll();
+		}
 
 		return list;
-
+		
 	}
 
 	private int roll()
@@ -29,9 +31,10 @@ public class Dice
 
 		Random rand = new Random();
 	
-		int value =( rand.nextInt((maximum - minimum) + 1) + minimum); 
+		int value = (rand.nextInt((maximum - minimum) + 1) + minimum); 
 
 		return value;
 
 	}
+	
 }
