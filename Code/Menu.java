@@ -2,8 +2,12 @@ import java.util.*;
 
 public class Menu 
 {
+	public Game newGame;
 	
-	public static void printMenu()
+	/**
+	 * Prints the menu
+	 */
+	public void printMenu()
 	{
 		System.out.print("Menu\n" +
 				"1 - roll\n" +
@@ -14,88 +18,100 @@ public class Menu
 				"\n\n\n");
 	}
 	
-	public static void runMenu()
+	/**
+	 * Runs the game's menu
+	 */
+	public void runMenu()
 	{
 		Scanner in = new Scanner(System.in);
 		int input = 0;
-	
+		
+		
+		
 		while(input != 5)
 		{
 			printMenu();
 			
 			if(input == 1)
 			{
-				
 				roll();
-				
 			}
-			
 			else if(input == 2)
 			{
-			
 				newGame();
-			
-				
 			}
-			
 			else if(input == 3)
 			{
-			
 				viewStats();
-			
-				
 			}
-			
 			else if(input ==4)
 			{
-			
 				viewRules();
-			
-				
 			}
 			
+				
+			
+			
 			input = in.nextInt();
-		
+			
+			
 		}
 		
 		System.out.println("goodbye");
-		
 	}
 	
-	public static void roll()
+	/**
+	 * 
+	 */
+	public void roll()
 	{
-		
 		System.out.println("roll");
-	
 	}
 	
-	public static void newGame()
+	/**
+	 * New Game object is created
+	 */
+	public void newGame()
 	{
-	
+		Scanner scan = new Scanner(System.in);
 		System.out.println("new game");
-	
 		
+		System.out.println("Specify number of players: ");
+		int players = scan.nextInt();
+		
+		System.out.println("Specify the winning score: ");
+		int winningScore = scan.nextInt();
+		
+		newGame = new Game(players, winningScore);
 	}
 	
-	public static void viewStats()
+	/**
+	 * Shows statistics
+	 */
+	public void viewStats()
 	{
-		
 		System.out.println("view stats");
-	
 	}
 	
-	public static void viewRules()
+	/**
+	 * Shows rules
+	 */
+	public void viewRules()
 	{
-		
-		
 		System.out.println("view rules");
 	}
 	
-	public static void main(String[] args)
+	/**
+	 * Runs the program
+	 * @param args
+	 */
+	public void main(String[] args)
 	{
-		
 		runMenu();
 		
+
 	}//main end
 
 }//class end
+
+
