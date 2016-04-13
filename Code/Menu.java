@@ -18,69 +18,84 @@ public class Menu
 	{
 		Scanner in = new Scanner(System.in);
 		int input = 0;
-		
-		
-		
+	
 		while(input != 5)
 		{
 			printMenu();
 			
 			if(input == 1)
 			{
+				
 				roll();
+				
 			}
+			
 			else if(input == 2)
 			{
+			
 				newGame();
-			}
-			else if(input == 3)
-			{
-				viewStats();
-			}
-			else if(input ==4)
-			{
-				viewRules();
-			}
 			
 				
+			}
 			
+			else if(input == 3)
+			{
+			
+				viewStats();
+			
+				
+			}
+			
+			else if(input ==4)
+			{
+			
+				viewRules();
+			
+				
+			}
 			
 			input = in.nextInt();
-			
-			
+		
 		}
 		
 		System.out.println("goodbye");
+		
 	}
 	
 	public static void roll()
 	{
+		
 		System.out.println("roll");
+	
 	}
 	
 	public static void newGame()
 	{
+	
 		System.out.println("new game");
+	
+		
 	}
 	
 	public static void viewStats()
 	{
+		
 		System.out.println("view stats");
+	
 	}
 	
 	public static void viewRules()
 	{
+		
+		
 		System.out.println("view rules");
 	}
 	
-	
 	public static void main(String[] args)
 	{
+		
 		runMenu();
 		
-
 	}//main end
 
 }//class end
-
-
