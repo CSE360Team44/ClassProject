@@ -10,10 +10,10 @@ import java.util.*;
  * 		so dice rolls are also "rigged".
  * 
  * @author CSE360 Spring 2016 Team 44: Fernando Avalos,
- * 		    		       			   Maria Castro,
- * 		    	   	       			   Patricia Evans,
- * 		    		       			   Anthony Gonzalez,
- * 		    		       			   Ivan Soledad.
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
  * @version April 15, 2016
  * 
  */
@@ -62,6 +62,7 @@ public class DiceTesting
 		System.out.println("riggedRoll(): " + riggedDice);
 		riggedRollDice(3);
 		System.out.print("riggedRollDice(): ");
+		
 		for(int index = 0; index < numOfDice; index++)
 		{
 			
@@ -81,8 +82,6 @@ public class DiceTesting
 		}
 		
 		String actualTestRoll = printList(riggedList);
-	
-		
 		testingRiggedRollDice(expectedTestRoll, actualTestRoll);
 		
 		System.out.println("\n");
@@ -101,11 +100,11 @@ public class DiceTesting
 		
 		System.out.println();
 		
-		
 	}
 	
 	public static void main (String args[])
 	{
+		
 		System.out.println("---------------------------------------");
 		System.out.println("\tBegin Testing");
 		System.out.println("---------------------------------------\n\n");
@@ -216,7 +215,6 @@ public class DiceTesting
 		
 		for(int index = 0; index < numOfDice; index++)
 		{
-			
 			riggedList[index] = riggedRoll(value);
 			
 		}
@@ -232,19 +230,23 @@ public class DiceTesting
 	 * 		  actualRiggedRoll int actual rigged roll. 
 	 * @return none 
 	 */
-	public void testingRiggedRoll(int expectedRiggedRoll, int actualRiggedRoll){
+	public void testingRiggedRoll(int expectedRiggedRoll, int actualRiggedRoll)
+	{
 		
-		if(expectedRiggedRoll == actualRiggedRoll){
+		if(expectedRiggedRoll == actualRiggedRoll)
+		{
 			
 			System.out.println("Expected rigged roll " + expectedRiggedRoll + " matches the actual rigged roll " + actualRiggedRoll);
 			
 		}
 		
-		else{
+		else
+		{
 			
 			System.out.println("Expected rigged roll " + expectedRiggedRoll + " does not match the actual rigged roll " + actualRiggedRoll);
 			
 		}
+
 	}
 	
 	/**
@@ -254,34 +256,23 @@ public class DiceTesting
 	 * 		  actualRiggedRollDice String actual rigged rolls.
 	 * @return none 
 	 */
-	public void testingRiggedRollDice(String expectedRiggedRollDice, String actualRiggedRollDice){
+	public void testingRiggedRollDice(String expectedRiggedRollDice, String actualRiggedRollDice)
+	{
 		
-		if(expectedRiggedRollDice.equals(actualRiggedRollDice)){
-			
-			if(expectedRiggedRollDice.equals("") && actualRiggedRollDice.equals("")){
+		if(expectedRiggedRollDice.equals(actualRiggedRollDice))
+		{
+
+			System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + "matches the actual rigged dice rolls " + actualRiggedRollDice);
 				
-				expectedRiggedRollDice = "\"\"";
-				actualRiggedRollDice = "\"\"";
-				
-				System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + "matches the actual rigged dice rolls " + actualRiggedRollDice);
-			
-			}
-			
-			else{
-				
-				System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + "matches the actual rigged dice rolls " + actualRiggedRollDice);
-				
-			}
-			
 		}
 		
-		else{
+		else
+		{
 			
 			System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice +  "does not match the actual rigged dice rolls " + actualRiggedRollDice);
 			
 		}
 	
-		
 	}
 		
 	/**
@@ -290,11 +281,13 @@ public class DiceTesting
 	 * @param rollList int[] the array that contains all the face values of each roll. 
 	 * @return  listString String contains the list of the rolls. 
 	 */
-	public String printList(int[] rollList){
+	public String printList(int[] rollList)
+	{
 		
 		String listString = "";
 		
-			for(int index = 0; index < numOfDice; index++){
+			for(int index = 0; index < numOfDice; index++)
+			{
 			
 				int rolledNum = rollList[index];
 				String rollNumString = Integer.toString(rolledNum);
