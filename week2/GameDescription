@@ -1,0 +1,133 @@
+Here are the rules to the game I proposed 
+
+The game, as far as I am aware, has no name. It’s nickname is “Oh, sheet!”.
+(This is the nickname because a few elderly Mexican women use to play this game, and upon losing points they would say “Oh, shit”, however, their accents made it sound like “Oh, sheet”)
+
+Number of players: 2+
+
+Each player takes his or her turn one after another.
+
+The win condition is the first player to make it to 10,000 points (exactly 10,000; going over does not count). After a player does so, the other players can choose to continue playing on to decide on second place winner, third place winner, and etc, or start a new game.
+
+The game is played with 6 dice.
+
+The only numbers on a die that hold any individual value are 1 and 5
+
+1 = 100 points		5 = 50 points
+
+3+ occurrences of any number are worth an increasing amount of points. 
+
+Pointing system
+One 1 		100 points
+Three 1 	1000 points
+Four 1		2000 points
+Five 1		4000 points
+Six 1		8000 points
+
+Three 2	200 points
+Four 2		400 points
+Five 2		800 points
+Six 2		1600 points
+
+Three 3	300 points
+Four 3		600 points
+Five 3		1200 points
+Six 3		2400 points
+
+Three 4	400 points
+Four 4		800 points
+Five 4		1600 points
+Six 4		3200 points
+One 5		50 	
+Three 5	500 points
+Four 5		1000 points
+Five 5		2000 points
+Six 5		4000 points
+
+Three 6	600 points
+Four 6		1200 points
+Five 6		2400 points
+Six 6		4800 points
+
+A roll of 1, 2, 3, 4, 5, 6 on the dice is a 1000 points
+
+
+A pattern can be seen that three of a number creates a score of 100*(number rolled three times)
+Every occurrence of a number past three rolls multiplies the 100*(number rolled three times) by 2
+For example, five 4’s is [100*(4)]*2*2 = 1600 points.
+
+Player’s turns can end in 2 different ways. Either the player decides to “hold” or loses his or her points. This will probably be the most difficult rule to write in out in words.
+
+During a player’s turn, he or she can roll multiple times. The catch is that to continue rolling the player must have scored points on the previous roll. If the player does not score any points, then he or she loses any points that have been accumulated during the turn. The player can at (almost) any moment end his or her turn and add the points accumulated to his or her total score. If the player decides to roll again on the same turn, the dice from the previous roll that were worth points cannot be rolled again. This rule ensures that while a player may be able to earn a large amount of points on a single turn, it becomes riskier the longer the turn continues. If the player manages to make each die roll a value worth points, then he or she may collect all six dice and continue rolling, of course, still risking the points if he or she fails a roll.
+
+The last rule: before a player can decide to “hold” his or her score for the turn and add it to his or her total sum, the player must achieve at least 1000 points to “get onto the board”. After doing so once allows the player at anytime in future turns to “hold” and not roll.
+
+
+
+
+
+
+
+
+Example game
+
+Player 1 starts the game by taking the six dice and rolling:
+
+His roll is:	1, 5, 5, 4, 2, 6
+
+One 1 = 100 points
+Two 5 = 50 + 50 = 100 points
+4, 2, 6 individually are worth nothing.
+
+Therefore, player 1 has 200 points currently, but must first make it onto the board by achieving a 1000 points in order to hold. This means player 1 must roll the remaining dice.
+
+The remaining dice are 4, 2, 6 since none of these had a score associated with them.
+
+Player 1 rolls:		4, 4, 4
+4 alone is worth nothing, as is two 4’s worth nothing, but three 4’s is worth 400 points.
+
+Currently, this puts player 1’s points for the turn at 600 points. However, this is still not enough to be on the board.
+
+Luckily, player 1 managed to make every die worth some amount of points. This allows player 1 to collect all six dice and rule them each again.
+
+Player 1 rolls:		1, 2, 3, 4, 5, 6
+
+By the rules of the game, this special roll is worth 1000 points.
+This puts player 1’s points for the turn at 1600 points, and since each die is associated with a value, Player 1 is allowed to roll again. However, since Player 1 managed to achieve a score above 1000, he may decide to “hold” and this will put him onto the board. Being on the board allows player 1 to decide to hold whenever he so wishes on future turns. The 1600 points are now added to player 1’s overall score.
+
+
+Player 2 is next and takes the six dice
+
+His roll is:	1, 5, 4, 4, 6, 6
+
+One 1 = 100 points
+One 5 = 50 points
+Two 4’s is worth nothing
+Two 6’s is worth nothing
+
+Since player 2 is not on the board (i.e. does not have at least a 1000 points in his overall score) he cannot hold.
+
+Player 2 gethers the 4 dice that did not have an associated value and rolls
+
+His roll:	4, 4, 4, 4
+Four 4 = 800
+This puts player 2’s total points for the turn at 950. However, he is still not on the board.
+
+Since each die had a value associated with it so Player 2 may gather them all and roll each of them again.
+
+His roll: 	2, 2, 3, 3, 4, 4
+
+Two 2 = 0
+Two 3 = 0
+Two 4 = 0
+
+Since Player 2 failed to roll anything worth points, he loses any points gained during the current turn. This also means he did not managed to get onto the board and must try again during his next turn.
+
+Player 3 starts and so on…
+
+
+
+
+I’ve realized this has quite a bit of rules to it and appears complicated. I can bring dice so we can as a group try to play a quick game. We can then decide whether we wish to pursue this game or not.
+
+If there are any questions don’t hesitate to ask them in the facebook group.
