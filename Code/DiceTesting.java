@@ -109,6 +109,11 @@ public class DiceTesting
 		System.out.println("\tBegin Testing");
 		System.out.println("---------------------------------------\n\n");
 		
+		System.out.println("\tTesting 0 (null) Rolls.");
+		System.out.println("---------------------------------------");
+		new DiceTesting(0);
+		System.out.println("---------------------------------------");
+		
 		System.out.println("\tTesting Six Rolls.");
 		System.out.println("---------------------------------------");
 		new DiceTesting(6);
@@ -137,7 +142,7 @@ public class DiceTesting
 		System.out.println("\tTesting One Roll.");
 		System.out.println("---------------------------------------");
 		new DiceTesting(1);
-		System.out.println("---------------------------------------");
+		System.out.println("---------------------------------------\n");
 		
 		System.out.println("---------------------------------------");
 		System.out.println("\tEnd Testing");
@@ -215,6 +220,7 @@ public class DiceTesting
 		
 		for(int index = 0; index < numOfDice; index++)
 		{
+			
 			riggedList[index] = riggedRoll(value);
 			
 		}
@@ -230,8 +236,7 @@ public class DiceTesting
 	 * 		  actualRiggedRoll int actual rigged roll. 
 	 * @return none 
 	 */
-	public void testingRiggedRoll(int expectedRiggedRoll, int actualRiggedRoll)
-	{
+	public void testingRiggedRoll(int expectedRiggedRoll, int actualRiggedRoll){
 		
 		if(expectedRiggedRoll == actualRiggedRoll)
 		{
@@ -246,7 +251,7 @@ public class DiceTesting
 			System.out.println("Expected rigged roll " + expectedRiggedRoll + " does not match the actual rigged roll " + actualRiggedRoll);
 			
 		}
-
+		
 	}
 	
 	/**
@@ -256,14 +261,28 @@ public class DiceTesting
 	 * 		  actualRiggedRollDice String actual rigged rolls.
 	 * @return none 
 	 */
-	public void testingRiggedRollDice(String expectedRiggedRollDice, String actualRiggedRollDice)
-	{
+	public void testingRiggedRollDice(String expectedRiggedRollDice, String actualRiggedRollDice){
 		
 		if(expectedRiggedRollDice.equals(actualRiggedRollDice))
 		{
-
-			System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + "matches the actual rigged dice rolls " + actualRiggedRollDice);
+			
+			if(expectedRiggedRollDice.equals("") && actualRiggedRollDice.equals(""))
+			{
 				
+				expectedRiggedRollDice = "\"\"";
+				actualRiggedRollDice = "\"\"";
+				
+				System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + " matches the actual rigged dice rolls " + actualRiggedRollDice);
+			
+			}
+			
+			else
+			{
+				
+				System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice + "matches the actual rigged dice rolls " + actualRiggedRollDice);
+				
+			}
+			
 		}
 		
 		else
@@ -272,7 +291,7 @@ public class DiceTesting
 			System.out.println("Expected rigged dice rolls " + expectedRiggedRollDice +  "does not match the actual rigged dice rolls " + actualRiggedRollDice);
 			
 		}
-	
+			
 	}
 		
 	/**
