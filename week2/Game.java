@@ -31,8 +31,11 @@ public class Game{
 		// each player is prompted for their name
 		for(int index = 0; index < array.length; index++)
 		{
-			System.out.println("Enter your name: ");
+			System.out.print("Enter your name: ");
 			name = scan.nextLine();
+
+			System.out.println("\n");
+
 			array[index] = new Player(name);
 		}
 		players = array;
@@ -41,15 +44,20 @@ public class Game{
 	/**
 	 * Function that implements roll
 	 */
-	public void gameRoll()
+	public boolean gameRoll()
 	{
+		boolean gameFinished = false;
+
 		// current player rolls
 		players[currentPlayer].roll();
 
 		// checks if the current player has surpassed the winning score
 		// if they have, the game is over
 		if(players[currentPlayer].checkWin(winningScore))
+		{
 			this.gameOver();
+			gameFinished = true;
+		}
 
 		// if they haven't, set the temporary score to 0 and the turn ends
 		// once the turn ends, go to next player
@@ -58,6 +66,8 @@ public class Game{
 			players[currentPlayer].setTempScore(0);
 			nextPlayer();
 		}
+
+		return gameFinished;
 	}
 
 	/**
@@ -90,9 +100,9 @@ public class Game{
 	 * Function that checks if the game is over
 	 * @return
 	 */
-	public void gameOver()
+	private void gameOver()
 	{
-		System.out.println("Game over");
+		System.out.println("Game over\n");
 
 		// printStats is called to print the players' scores and display the winner
 		printStats();
@@ -103,7 +113,7 @@ public class Game{
 	{
 		for(int index = 0; index < players.length; index++)
 		{
-			System.out.println(players[index].getName() + " " + players[index].getOverallScore());
+			System.out.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
 
 		}
 	}
@@ -121,5 +131,11 @@ public class Game{
 		if(currentPlayer >= players.length)
 			currentPlayer = 0;
 	}
+
+	public int getPlayerScore()
+	{
+		return players[currentPlayer].getTempScore() + players[currentPlayer].getOverallScore();
+	}
 	
 }
+

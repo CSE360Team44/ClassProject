@@ -5,6 +5,7 @@ public class Menu
 	public Game newGame;
 	public Player me;
 	public boolean gameActive = false;
+	public boolean gameFinished = false;
 	
 	/**
 	 * Prints the menu
@@ -39,29 +40,45 @@ public class Menu
 		
 		input = in.nextInt();
 
-		while(input != 5)
+		while(input != 5 && gameFinished == false)
 		{
 			
 			if(input == 1)
 			{
-				roll();
+				if(gameActive)
+					roll();
+				else
+					System.out.println("No Game Active\n");
 			}
 			else if(input == 2)
 			{
-				newGame();
-				gameActive = true;
+				if(!gameActive)
+				{
+					newGame();
+					gameActive = true;
+				}else
+					System.out.println("Game already in session\n");
 			}
 			else if(input == 3)
 			{
-				viewStats();
+				if(gameActive)
+					viewStats();
+				else
+					System.out.println("No Game Active\n");
 			}
-			else if(input ==4)
+			else if(input == 4)
 			{
-				viewRules();
+				if(gameActive)
+					viewRules();
+				else
+					System.out.println("No Game Active\n");
 			}
 			else if(input == 6)
 			{
-				hold();
+				if(gameActive)
+					hold();
+				else
+					System.out.println("No Game Active\n");
 			}
 			
 			// if game is active, get the current player
@@ -84,7 +101,7 @@ public class Menu
 	 */
 	public void roll()
 	{
-		newGame.gameRoll();
+		gameFinished = newGame.gameRoll();
 	}
 
 	/**
@@ -92,7 +109,16 @@ public class Menu
 	*/
 	public void hold()
 	{
-		newGame.hold();
+		int currentScore = newGame.getPlayerScore();
+
+		if(newGame.hold())
+		{
+			System.out.println("Turn Held");
+			System.out.println("Current Score: " + currentScore + "\n");
+		}else
+		{
+			System.out.println("Cannot hold turn at this time. Continue Rolling!\n");
+		}
 	}
 	
 	/**
@@ -101,13 +127,17 @@ public class Menu
 	public void newGame()
 	{
 		Scanner scan = new Scanner(System.in);
-		System.out.println("new game");
+		System.out.println("New Game!");
 		
-		System.out.println("Specify number of players: ");
+		System.out.print("Specify number of players: ");
 		int players = scan.nextInt();
+
+		System.out.println("\n");
 		
-		System.out.println("Specify the winning score: ");
+		System.out.print("Specify the winning score: ");
 		int winningScore = scan.nextInt();
+
+		System.out.println("\n");
 		
 		newGame = new Game(players, winningScore);
 	}
@@ -117,7 +147,7 @@ public class Menu
 	 */
 	public void viewStats()
 	{
-		System.out.println("view stats");
+		System.out.println("View Stats: Not Yet Implemented\n");
 	}
 	
 	/**
@@ -125,7 +155,7 @@ public class Menu
 	 */
 	public void viewRules()
 	{
-		System.out.println("view rules");
+		System.out.println("View Rules: Not Yet Implemented\n");
 	}
 	
 	/**

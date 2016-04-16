@@ -25,7 +25,7 @@ public class Dice
 	*/
 	public int[] rollDice()
 	{
-		System.out.println("Roll: ");
+		System.out.print("Roll: ");
 
 		// each die is given a random value
 		for(int index = 0; index < numOfDice; index++){
