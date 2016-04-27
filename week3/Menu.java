@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Menu 
 {
@@ -25,13 +26,14 @@ public class Menu
 				"4 - view rules\n" +
 				"5 - quit\n" +
 				"6 - hold\n" +
+				"7 - view past winners\n"+
 				"\n\n\n");
 	}
 	
 	/**
 	 * Runs the game's menu
 	 */
-	public void runMenu() throws FileNotFoundException
+	public void runMenu() throws IOException
 	{
 		Scanner in = new Scanner(System.in);
 		int input;
@@ -69,10 +71,10 @@ public class Menu
 			}
 			else if(input == 4)
 			{
-				//if(gameActive)
+				if(gameActive)
 					System.out.println(viewRules());
-				//else
-					//4System.out.println("No Game Active\n");
+				else
+					System.out.println("No Game Active\n");
 			}
 			else if(input == 6)
 			{
@@ -80,6 +82,17 @@ public class Menu
 					hold();
 				else
 					System.out.println("No Game Active\n");
+			}
+			else if(input == 7)
+			{
+				
+					viewHistory();
+							}
+			
+			if(gameFinished ==  true)
+			{
+				gameActive = false;
+				gameFinished = false;
 			}
 			
 			// if game is active, get the current player
@@ -100,7 +113,7 @@ public class Menu
 	/**
 	 * Roll function
 	 */
-	public void roll() throws FileNotFoundException
+	public void roll() throws IOException
 	{
 		gameFinished = newGame.gameRoll();
 	}
@@ -148,7 +161,7 @@ public class Menu
 	 */
 	public void viewStats()
 	{
-		System.out.println("View Stats: Not Yet Implemented\n");
+		System.out.println(newGame.getStats());
 	}
 	
 	/**
@@ -201,7 +214,7 @@ public class Menu
 	 * Runs the program
 	 * @param args
 	 */
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args) throws FileNotFoundException,IOException
 	{
 		// menu object start is created
 		Menu start = new Menu();
@@ -211,5 +224,22 @@ public class Menu
 		
 
 	}//main end
+	
+	public void  viewHistory() throws FileNotFoundException
+	{
+		
+		String s = FileIO.getHistory() ;
+		
+		if(s.compareTo("") == 0)
+		{
+			System.out.println("No history available" );
+		}
+		else
+		{
+			System.out.println(s);
+		}
+	}
+	
+	
 
 }//class end
