@@ -1,12 +1,16 @@
 import java.util.Scanner;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Game{
 	
 	private int winningScore;
 	private int currentPlayer;
 	private Player players[];
+	private String stats;
+	
 	
 	/**
 	 * Constructor that creates a new Game
@@ -46,7 +50,7 @@ public class Game{
 	/**
 	 * Function that implements roll
 	 */
-	public boolean gameRoll() throws FileNotFoundException
+	public boolean gameRoll() throws IOException 
 	{
 		boolean gameFinished = false;
 
@@ -57,18 +61,29 @@ public class Game{
 		// if they have, the game is over
 		if(players[currentPlayer].checkWin(winningScore))
 		{
+			storeResult(players[currentPlayer].getName());
 			System.out.println("Game over\n");
-			this.gameOver();
+			//this.gameOver();
 			gameFinished = true;
+			
+			
 		}
 
 		// if they haven't, set the temporary score to 0 and the turn ends
 		// once the turn ends, go to next player
-		if(players[currentPlayer].getTurnEnd())
+		if(players[currentPlayer].getTurnEnd() &&  players[currentPlayer].checkWin(winningScore) == false)
 		{
 			players[currentPlayer].setTempScore(0);
 			nextPlayer();
 		}
+		
+		
+		System.out.print("your overall score is now : " + players[currentPlayer].getOverallScore() + 
+				"\nyour temp score is now " + players[currentPlayer].getTempScore() + "\nyour name is " + players[currentPlayer].getName()
+				+ "\n");
+		
+		updateStats();
+		
 
 		return gameFinished;
 	}
@@ -114,18 +129,18 @@ public class Game{
 			outputFile.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
 
 		}
-		//printStats();
+		printStats();
 		outputFile.close();
 	}
 	
 	// prints the players' names and scores
-	/*private void printStats()
+	private void printStats()
 	{
 		for(int index = 0; index < players.length; index++)
 		{
 			System.out.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
 		}
-	}*/
+	}
 
 	/** 
 	 * Function that goes to next player
@@ -145,5 +160,27 @@ public class Game{
 	{
 		return players[currentPlayer].getTempScore() + players[currentPlayer].getOverallScore();
 	}
+	
+	private void storeResult(String winnersName) throws IOException
+	{
+				
+		FileIO.appendIntToFile("History.txt", winnersName);
+	}
+		
+	private void updateStats()
+	{
+		stats = "";
+		for(int index = 0; index < players.length; index++)
+		{
+			stats += players[index].getName() + " " + players[index].getOverallScore() + "\n";
+		}
+		
+	}
+	
+	public String getStats()
+	{
+		return stats;
+	}
+	
 	
 }
