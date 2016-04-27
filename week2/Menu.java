@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.FileNotFoundException;
 
 public class Menu 
 {
@@ -30,7 +31,7 @@ public class Menu
 	/**
 	 * Runs the game's menu
 	 */
-	public void runMenu()
+	public void runMenu() throws FileNotFoundException
 	{
 		Scanner in = new Scanner(System.in);
 		int input;
@@ -99,7 +100,7 @@ public class Menu
 	/**
 	 * Roll function
 	 */
-	public void roll()
+	public void roll() throws FileNotFoundException
 	{
 		gameFinished = newGame.gameRoll();
 	}
@@ -209,7 +210,7 @@ public class Menu
 	 * Runs the program
 	 * @param args
 	 */
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
 		// menu object start is created
 		Menu start = new Menu();
