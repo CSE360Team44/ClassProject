@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
 public class Game{
 	
@@ -44,7 +46,7 @@ public class Game{
 	/**
 	 * Function that implements roll
 	 */
-	public boolean gameRoll()
+	public boolean gameRoll() throws FileNotFoundException
 	{
 		boolean gameFinished = false;
 
@@ -55,6 +57,7 @@ public class Game{
 		// if they have, the game is over
 		if(players[currentPlayer].checkWin(winningScore))
 		{
+			System.out.println("Game over\n");
 			this.gameOver();
 			gameFinished = true;
 		}
@@ -100,23 +103,30 @@ public class Game{
 	 * Function that checks if the game is over
 	 * @return
 	 */
-	private void gameOver()
+	private void gameOver() throws FileNotFoundException
 	{
-		System.out.println("Game over\n");
+		//System.out.println("Game over\n");
 
+		PrintWriter outputFile = new PrintWriter ("View Stats.txt");
 		// printStats is called to print the players' scores and display the winner
-		printStats();
+		for(int index = 0; index < players.length; index++)
+		{
+			outputFile.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
+
+		}
+		//printStats();
+		outputFile.close();
 	}
 	
 	// prints the players' names and scores
-	private void printStats()
+	/*private void printStats()
 	{
 		for(int index = 0; index < players.length; index++)
 		{
 			System.out.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
 
 		}
-	}
+	}*/
 
 	/** 
 	 * Function that goes to next player
