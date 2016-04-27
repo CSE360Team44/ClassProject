@@ -69,10 +69,10 @@ public class Menu
 			}
 			else if(input == 4)
 			{
-				if(gameActive)
-					viewRules();
-				else
-					System.out.println("No Game Active\n");
+				//if(gameActive)
+					System.out.println(viewRules());
+				//else
+					//4System.out.println("No Game Active\n");
 			}
 			else if(input == 6)
 			{
@@ -156,53 +156,44 @@ public class Menu
 	 */
 	public String viewRules()
 	{
-		return "  
-1. Number of player required: 2\n\n 
-2. The turns shifts from player to player if the following happens:\n
-      	The player loses their points (*)\n
-      	The player decided to hold (**)\n
- (*) The player loses his/her points if in the dice they roll, no dice of value 1 or 5 are rolled, and if in the dice that are rolled, no triples of any value are rolled.
-(**) For a player to be able to hold, that player must have first amassed a minimum of 1000 points. From this point on this player can hold, if so desired, and let the next player exercise their roll. \n\n
-3. The Point System:\n
-	The die values that are worth something, individually, are the values of 1 and 5. Otherwise, to get any points in this game, at least 3 of any value have to be rolled.\n
-	There is a special case described at the bottom(*) that when rolled is worth 1000 points. \n
-	 The point system is broken down as the following:\n\n  
-
-	1 = 100 points		5 = 50 points\n 
-
-	One 1 		100 points\n 
-	Three 1 	1000 points\n 
-	Four 1		2000 points\n 
-	Five 1		4000 points\n 
-	Six 1		8000 points\n \n 
-
-	Three 2	        200 points\n 
-	Four 2		400 points\n 
-	Five 2		800 points\n 
-	Six 2		1600 points\n \n 
-
-	Three 3	        300 points\n 
-	Four 3		600 points\n 
-	Five 3		1200 points\n 
-	Six 3		2400 points\n \n 
-
-	Three 4	        400 points\n 
-	Four 4		800 points\n 
-	Five 4		1600 points\n 
-	Six 4		3200 points\n \n 
-
-	One 5		50  points\n 
-	Three 5	        500 points\n 
-	Four 5		1000 points\n 
-	Five 5		2000 points\n 
-	Six 5		4000 points\n \n 
-
-	Three 6	        600 points\n 
-	Four 6		1200 points\n 
-	Five 6		2400 points\n 
-	Six 6		4800 points\n\n  
-
-	A roll of 1, 2, 3, 4, 5, 6 on the dice is a 1000 points(*)\n  "; 
+		return " 1. Number of player required: 2\n\n "
+				+ "2. The turns shifts from player to player if the following happens:\n"
+				+ "\tThe player loses their points (*)\n"
+				+ "\tThe player decided to hold (**)\n"
+				+ "\t(*) The player loses his/her points if in the dice they roll, no dice of value 1 or 5 are rolled, and if in the dice that are rolled, no triples of any value are rolled.\n"
+				+ "\t(**) For a player to be able to hold, that player must have first amassed a minimum of 1000 points. From this point on this player can hold, if so desired, and let the next player exercise their roll. \n\n"
+				+ "3. The Point System:\n"
+				+ "\tThe die values that are worth something, individually, are the values of 1 and 5. Otherwise, to get any points in this game, at least 3 of any value have to be rolled.\n"
+				+ "\tThere is a special case described at the bottom(***) that when rolled is worth 1000 points. \n"
+				+ "\tThe point system is broken down as the following:\n\n  "
+				+ "\t\t1 = 100 points		5 = 50 points\n\n "
+				+ "\t\tOne 1 		100 points\n "
+				+ "\t\tThree 1 	1000 points\n "
+				+ "\t\tFour 1		2000 points\n "
+				+ "\t\tFive 1		4000 points\n "
+				+ "\t\tSix 1		8000 points\n \n "
+				+ "\t\tThree 2	        200 points\n "
+				+ "\t\tFour 2		400 points\n "
+				+ "\t\tFive 2		800 points\n "
+				+ "\t\tSix 2		1600 points\n \n "
+				+ "\t\tThree 3	        300 points\n "
+				+ "\t\tFour 3		600 points\n "
+				+ "\t\tFive 3		1200 points\n "
+				+ "\t\tSix 3		2400 points\n \n "
+				+ "\t\tThree 4	        400 points\n "
+				+ "\t\tFour 4		800 points\n "
+				+ "\t\tFive 4		1600 points\n "
+				+ "\t\tSix 4		3200 points\n \n "
+				+ "\t\tOne 5		50  points\n "
+				+ "\t\tThree 5	        500 points\n "
+				+ "\t\tFour 5		1000 points\n "
+				+ "\t\tFive 5		2000 points\n "
+				+ "\t\tSix 5		4000 points\n \n "
+				+ "\t\tThree 6	        600 points\n "
+				+ "\t\tFour 6		1200 points\n "
+				+ "\t\tFive 6		2400 points\n "
+				+ "\t\tSix 6		4800 points\n\n  "
+				+ "(***)A roll of 1, 2, 3, 4, 5, 6 on the dice is a 1000 points\n  "; 
 		//System.out.println("View Rules: Not Yet Implemented\n");
 	}
 	
