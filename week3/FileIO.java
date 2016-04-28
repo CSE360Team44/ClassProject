@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 public class FileIO 
 {
-	//do not omit file extension for paramiter, returns arraylist of file contents
+	//do not omit file extension for parameter, returns arraylist of file contents
 	public static ArrayList<String> readFile(String fileName) throws FileNotFoundException
 	{
 		ArrayList<String> list = new ArrayList<String>();//to hold each line in file
@@ -41,7 +41,7 @@ public class FileIO
 	
 	
 	
-	//do not omit file extension for paramiter, appends line to the file if doesnt exist it creates it
+	//do not omit file extension for parameter, appends line to the file if doesnt exist it creates it
 	public static void appendIntToFile(String fileName, String lineToWrite) throws IOException
 	{
 		
