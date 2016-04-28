@@ -4,12 +4,14 @@ import org.junit.Test;
 
 public class PlayerTest {
 
+	// tests the Player constructor
 	@Test
 	public void testPlayer() {
 		Player newPlayer = new Player("Player");
 		assertNotNull(newPlayer);
 	}
 
+	// tests the getTempScore function
 	@Test
 	public void testGetTempScore() {
 		Player newPlayer = new Player("Player");
@@ -17,12 +19,14 @@ public class PlayerTest {
 		
 	}
 
+	// tests the getOverallScore function
 	@Test
 	public void testGetOverallScore() {
 		Player newPlayer = new Player("Player");
 		assertEquals(0, newPlayer.getOverallScore());
 	}
 
+	// tests the setTempScore function
 	@Test
 	public void testSetTempScore() {
 		Player newPlayer = new Player("Player");
@@ -30,6 +34,7 @@ public class PlayerTest {
 		assertEquals(600, newPlayer.getTempScore());
 	}
 
+	// tests the setOverallScore function
 	@Test
 	public void testSetOverallScore() {
 		Player newPlayer = new Player("Player");
@@ -37,12 +42,14 @@ public class PlayerTest {
 		assertEquals(1500, newPlayer.getOverallScore());
 	}
 
+	// tests the getName function
 	@Test
 	public void testGetName() {
 		Player newPlayer = new Player("John");
 		assertEquals("John", newPlayer.getName());
 	}
 
+	// tests the hold function
 	@Test
 	public void testHold() {
 		Player newPlayer = new Player("Player");
@@ -50,6 +57,7 @@ public class PlayerTest {
 		assertTrue(newPlayer.hold());
 	}
 
+	// tests the resetTurn function
 	@Test
 	public void testResetTurn() {
 		Player newPlayer = new Player("Player");
@@ -58,6 +66,7 @@ public class PlayerTest {
 		assertFalse(newPlayer.getTurnEnd());
 	}
 
+	// tests the roll function
 	@Test
 	public void testRoll() {
 		Player newPlayer = new Player("Player");
@@ -65,6 +74,7 @@ public class PlayerTest {
 		assertNotEquals(0, newPlayer.getTempScore());
 	}
 
+	// tests the getTurnEnd function
 	@Test
 	public void testGetTurnEnd() {
 		Player newPlayer = new Player("Player");
@@ -73,6 +83,7 @@ public class PlayerTest {
 		assertTrue(newPlayer.getTurnEnd());
 	}
 
+	// tests the checkWin function
 	@Test
 	public void testCheckWin() {
 		Player newPlayer1 = new Player("Tommy");
