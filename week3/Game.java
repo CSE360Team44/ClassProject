@@ -181,15 +181,24 @@ public class Game{
 	 */
 	private void printStats()
 	{
+		
 		for(int index = 0; index < players.length; index++)
 		{
+			
 			System.out.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
+		
 		}
+		
 	}
 
-	/** 
-	 * Function that goes to next player
-	 * @return
+	/**
+	 * nextPlayer - The turn is reset for the current player and the index variable
+	 * 			currentPlayer is incremented to move to the next player in
+	 * 			game. If currentPlayer index is incremented greater than
+	 * 			the amount of players, currentPlayer is set to 0 (the index
+	 * 			of the first player).
+	 * 	
+	 * @param none
 	 */
 	private void nextPlayer()
 	{
@@ -198,34 +207,79 @@ public class Game{
 		currentPlayer++;
 
 		if(currentPlayer >= players.length)
+		{
+			
 			currentPlayer = 0;
+			
+		}
+			
 	}
 
+	/**
+	 * getPlayerScore - Returns the result of the current player's stored overall score 
+	 * 			with their temporary score.
+	 * 	
+	 * @param none
+	 * @return playerScore int a number containing the sum of the current player's temporary
+	 * 				and overall score. 
+	 */
 	public int getPlayerScore()
 	{
+		
+		//int playerScore = players[currentPlayer].getTempScore() + players[currentPlayer].getOverallScore();
+		//return playerScore;
 		return players[currentPlayer].getTempScore() + players[currentPlayer].getOverallScore();
+		
 	}
 	
+	/**
+	 * storeResult - The winner's name is written to the file "History.txt". 
+	 * 			"History.txt" can be appended and will contain all
+	 * 			winners of each game played. 
+	 * 
+	 * @throws IOException
+	 * @param winnersName String a string of the winner's name.
+	 */
 	private void storeResult(String winnersName) throws IOException
 	{
 				
 		FileIO.appendIntToFile("History.txt", winnersName);
-	}
 		
+	}
+	
+	/**
+	 * updateStats - Iterates through the players array and appends to the string variable, stats. 
+	 * 			The statistics of each player is on a new line and has the player name
+	 * 			and score. 
+	 * 
+	 * @param none
+	 */	
 	private void updateStats()
 	{
+		
 		stats = "";
 		for(int index = 0; index < players.length; index++)
 		{
+			
 			stats += players[index].getName() + " " + players[index].getOverallScore() + "\n";
+			
 		}
 		
 	}
 	
+	/**
+	 * getStats - Returns the statistics of each player in the game. 
+	 * 		 	Statistics are the player's name and score. 	
+	 * 	
+	 * @param none
+	 * @return stats String a string that contains on a new line each players statistics, 
+	 * 				their name and score. 
+	 */
 	public String getStats()
 	{
+		
 		return stats;
+		
 	}
-	
 	
 }
