@@ -2,6 +2,22 @@ import java.util.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * Class to control game play. Menu class is temporary in place of GUI. 
+ * 		Takes input from user and will implement a roll, create new game,
+ * 		view stats, view rules, hold, quit, and view past winners. 
+ * 		Instantiates objects Game newGame and Player me. 
+ * 		public boolean gameActive initialized to false. 
+ * 		public boolean gameFinished initialized to false.
+ * 
+ * @author CSE360 Spring 2016 Team 44: Fernando Avalos,
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
+ * @version April 27, 2016
+ * 
+ */
 public class Menu 
 {
 	public Game newGame;
