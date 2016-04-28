@@ -1,5 +1,3 @@
-
-
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,8 +19,27 @@ import java.util.Scanner;
  * 
  * */
 
+/**
+ * Class to read and write winning player names from each game played to a file.  
+ * 
+ * @author CSE360 Spring 2016 Team 44: Fernando Avalos,
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
+ * @version April 27, 2016
+ * 
+ */
 public class FileIO 
 {
+	
+	/**
+	 * readFile -  
+	 * 	
+	 * @throws FileNotFoundException						
+	 * @param fileName String
+	 * @return list ArrayList<String> 
+	 */
 	//do not omit file extension for parameter, returns arraylist of file contents
 	public static ArrayList<String> readFile(String fileName) throws FileNotFoundException
 	{
@@ -37,10 +54,17 @@ public class FileIO
 		in1.close();
 		
 		return list;
+		
 	}
 	
 	
-	
+	/**
+	 * appendIntToFile -  
+	 * 	
+	 * @throws IOException						
+	 * @param fileName String
+	 * 	  lineToWrite String
+	 */
 	//do not omit file extension for parameter, appends line to the file if doesnt exist it creates it
 	public static void appendIntToFile(String fileName, String lineToWrite) throws IOException
 	{
@@ -56,6 +80,13 @@ public class FileIO
 		
 	}
 	
+	/**
+	 * getHistory -  
+	 * 	
+	 * @throws FileNotFoundException						
+	 * @param none 
+	 * @return winners String
+	 */
 	public static String getHistory() throws FileNotFoundException
 	{
 		String winners;
@@ -74,10 +105,5 @@ public class FileIO
 		
 		
 	}
-	
-	
-	
-	
-	
 	
 }
