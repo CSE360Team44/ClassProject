@@ -26,7 +26,9 @@ public class Menu
 	public boolean gameFinished = false;
 	
 	/**
-	 * Prints the menu
+	 * printMenu -  
+	 * 
+	 * @param none
 	 */
 	public void printMenu()
 	{
@@ -47,7 +49,11 @@ public class Menu
 	}
 	
 	/**
-	 * Runs the game's menu
+	 * runMenu -  
+	 * 	          
+	 * 	
+	 * @throws IOException						
+	 * @param none
 	 */
 	public void runMenu() throws IOException
 	{
@@ -71,13 +77,22 @@ public class Menu
 			}
 			else if(input == 2)
 			{
+				
 				if(!gameActive)
 				{
 					newGame();
 					gameActive = true;
-				}else
+					
+				}
+				
+				else{
+					
 					System.out.println("Game already in session\n");
+					
+				}
+				
 			}
+			
 			else if(input == 3)
 			{
 				if(gameActive)
@@ -124,10 +139,14 @@ public class Menu
 		}
 		
 		System.out.println("goodbye");
+		
 	}
 	
 	/**
-	 * Roll function
+	 * roll -  
+	 * 	
+	 * @throws IOException						
+	 * @param none
 	 */
 	public void roll() throws IOException
 	{
@@ -135,8 +154,10 @@ public class Menu
 	}
 
 	/**
-	* Hold function
-	*/
+	 * hold - 
+	 * 	
+	 * @param none
+	 */
 	public void hold()
 	{
 		int currentScore = newGame.getPlayerScore();
@@ -152,7 +173,9 @@ public class Menu
 	}
 	
 	/**
-	 * New Game object is created
+	 * newGame - 
+	 * 	
+	 * @param none
 	 */
 	public void newGame()
 	{
@@ -173,7 +196,9 @@ public class Menu
 	}
 	
 	/**
-	 * Shows statistics
+	 * viewStats - 
+	 * 	
+	 * @param none
 	 */
 	public void viewStats()
 	{
@@ -181,10 +206,16 @@ public class Menu
 	}
 	
 	/**
-	 * Shows rules
+	 * viewRules - 
+	 * 	
+	 * @param none
+	 * @return rules String a string that contains the rules, and how points are awarded. 
 	 */
 	public String viewRules()
 	{
+		
+		//String rules; 
+		//return rules;
 		return " 1. Number of player required: 2\n\n "
 				+ "2. The turns shifts from player to player if the following happens:\n"
 				+ "\tThe player loses their points (*)\n"
@@ -227,8 +258,10 @@ public class Menu
 	}
 	
 	/**
-	 * Runs the program
-	 * @param args
+	 * main - 
+	 * 	
+	 * @throws FileNotFoundException, IOException						
+	 * @param args String[]
 	 */
 	public static void main(String[] args) throws FileNotFoundException,IOException
 	{
@@ -241,6 +274,12 @@ public class Menu
 
 	}//main end
 	
+	/**
+	 * viewHistory - 
+	 * 	
+	 * @throws FileNotFoundException						
+	 * @param none
+	 */
 	public void  viewHistory() throws FileNotFoundException
 	{
 		
@@ -248,14 +287,18 @@ public class Menu
 		
 		if(s.compareTo("") == 0)
 		{
+	
 			System.out.println("No history available" );
+	
 		}
+	
 		else
 		{
+	
 			System.out.println(s);
+	
 		}
+	
 	}
 	
-	
-
 }//class end
