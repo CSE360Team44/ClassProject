@@ -6,6 +6,4 @@ Playing instructions
 4. Roll and hold in accordance to the rules in the backlog, until the game is completed.
 
 
-NOTE: the following features are not yet implemented:
-* View statistics
-* View rules
+
