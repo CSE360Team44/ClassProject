@@ -14,11 +14,15 @@ public class FileIOTest
 		/*test 1 trying to read file that doestn exist*/
 		try
 		{
+			
 			FileIO.readFile("null.txt");
+			
 		}
 		catch(FileNotFoundException e)
 		{
+			
 			System.out.println("test 1 passed");
+			
 		}
 		 
 		
