@@ -11,8 +11,9 @@ import java.util.ArrayList;
  * 		Default initialization for private int winningScore, private int currentPlayer,
  * 		private Player players[], and private String stats.
  * 
+ * 
  * @author CSE360 Spring 2016 Team 44: 
- * 						   Fernando Avalos,
+ * 				      Fernando Avalos,
  * 		    		       Maria Castro,
  * 		    	   	       Patricia Evans,
  * 		    		       Anthony Gonzalez,
@@ -20,7 +21,8 @@ import java.util.ArrayList;
  * @version April 27, 2016
  * 
  */
-public class Game{
+public class Game
+{
 	
 	private int winningScore;
 	private int currentPlayer;
@@ -38,10 +40,12 @@ public class Game{
 	 */
 	Game(int playersNum, int winScore, String[] playerNames)
 	{
+		
 		players = new Player[playersNum];
 		currentPlayer = 0;
 		winningScore = winScore;
 		setNames(playerNames);
+		
 	}
 
 	/**
@@ -52,15 +56,19 @@ public class Game{
 	 */
 	private void setNames(String[] playerNames)
 	{
+		
 		Player[] tempPlayers = new Player[playerNames.length];
 		
 		// each players name is set to an object
 		for(int index = 0; index < playerNames.length; index++)
 		{
+			
 			tempPlayers[index] = new Player(playerNames[index]);
+			
 		}
 		
 		players = tempPlayers;
+		
 	}
 
 	/**
@@ -87,10 +95,10 @@ public class Game{
 		// if they have, the game is over
 		if(players[currentPlayer].checkWin(winningScore))
 		{
+			
 			storeResult(players[currentPlayer].getName());
-			//System.out.println("Game over\n");
-			//this.gameOver();
 			gameFinished = true;
+			
 		}
 
 		// if they haven't, set the temporary score to 0 and the turn ends
@@ -142,10 +150,14 @@ public class Game{
 		// if the current player holds, save their score and go to next player
 		if (players[currentPlayer].hold())
 		{
+			
 			held = true;			
 			nextPlayer();
+			
 		}
+		
 		return held;
+		
 	}
 	
 	/**
@@ -154,36 +166,24 @@ public class Game{
 	 */
 	private void gameOver() throws FileNotFoundException
 	{
-		//System.out.println("Game over\n");
+		
 
 		PrintWriter outputFile = new PrintWriter ("View Stats.txt");
+		
 		// printStats is called to print the players' scores and display the winner
 		for(int index = 0; index < players.length; index++)
 		{
+			
 			outputFile.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
 
 		}
+		
 		printStats();
 		outputFile.close();
+		
 	}
 	
-	/**
-	 * printStats - iterates through the players array printing the name and
-	 * 		score of the user. 
-	 * 						
-	 * @param none
-	 */
-	private void printStats()
-	{
-		
-		for(int index = 0; index < players.length; index++)
-		{
-			
-			System.out.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
-		
-		}
-		
-	}
+
 
 	/**
 	 * nextPlayer - The turn is reset for the current player and the index variable
@@ -216,7 +216,9 @@ public class Game{
 	 */
 	public int getTurnScore()
 	{
+		
 		return players[currentPlayer].getTempScore();
+		
 	}
 	
 	/**
@@ -225,7 +227,9 @@ public class Game{
 	 */
 	public int getTotalScore()
 	{
+		
 		return players[currentPlayer].getOverallScore();
+		
 	}
 	
 	/**
@@ -270,10 +274,14 @@ public class Game{
 	private void updateStats()
 	{
 		stats = "";
+		
 		for(int index = 0; index < players.length; index++)
 		{
+			
 			stats += players[index].getName() + " " + players[index].getOverallScore() + "\n";
+			
 		}
+		
 	}
 	
 	/**
@@ -286,7 +294,9 @@ public class Game{
 	 */
 	public String getStats()
 	{
-		return stats;		
+		
+		return stats;
+		
 	}
 	
 }
