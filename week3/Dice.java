@@ -34,6 +34,10 @@ public class Dice
 		this.numOfDice = numOfDice;
 		list = new int[numOfDice];
 		
+		for(int index = 0; index < list.length; index++)
+			list[index] = 0;
+		
+		
 	}
 
 	/**
@@ -45,19 +49,17 @@ public class Dice
 	 */
 	public int[] rollDice()
 	{
-		System.out.print("Roll: ");
+		
+		
+		
+	
 
 		// each die is given a random value
 		for(int index = 0; index < numOfDice; index++){
-			
 			list[index] = roll();
-
-			// the values are printed
-			System.out.print(list[index] + " ");
-		
 		}
 
-		System.out.println("\n");
+	
 
 		return list;
 	

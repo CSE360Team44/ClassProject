@@ -11,7 +11,8 @@ import java.util.ArrayList;
  * 		Default initialization for private int winningScore, private int currentPlayer,
  * 		private Player players[], and private String stats.
  * 
- * @author CSE360 Spring 2016 Team 44: Fernando Avalos,
+ * @author CSE360 Spring 2016 Team 44: 
+ * 						   Fernando Avalos,
  * 		    		       Maria Castro,
  * 		    	   	       Patricia Evans,
  * 		    		       Anthony Gonzalez,
@@ -35,12 +36,12 @@ public class Game{
 	 * @param playersNum int the number of players playing the game.
 	 * 	  winScore int the number of point required to win the game. 
 	 */
-	Game(int playersNum, int winScore)
+	Game(int playersNum, int winScore, String[] playerNames)
 	{
 		players = new Player[playersNum];
 		currentPlayer = 0;
 		winningScore = winScore;
-		setNames(players);
+		setNames(playerNames);
 	}
 
 	/**
@@ -49,22 +50,17 @@ public class Game{
 	 * 						
 	 * @param array Player[] contains a list of the player names in the game. 
 	 */
-	public void setNames(Player[] array)
+	private void setNames(String[] playerNames)
 	{
-		Scanner scan = new Scanner(System.in);
-		String name = "";
+		Player[] tempPlayers = new Player[playerNames.length];
 		
-		// each player is prompted for their name
-		for(int index = 0; index < array.length; index++)
+		// each players name is set to an object
+		for(int index = 0; index < playerNames.length; index++)
 		{
-			System.out.print("Enter your name: ");
-			name = scan.nextLine();
-
-			System.out.println("\n");
-
-			array[index] = new Player(name);
+			tempPlayers[index] = new Player(playerNames[index]);
 		}
-		players = array;
+		
+		players = tempPlayers;
 	}
 
 	/**
@@ -91,12 +87,10 @@ public class Game{
 		// if they have, the game is over
 		if(players[currentPlayer].checkWin(winningScore))
 		{
-			
 			storeResult(players[currentPlayer].getName());
-			System.out.println("Game over\n");
+			//System.out.println("Game over\n");
 			//this.gameOver();
 			gameFinished = true;
-			
 		}
 
 		// if they haven't, set the temporary score to 0 and the turn ends
@@ -109,9 +103,9 @@ public class Game{
 		
 		}
 		
-		System.out.print("your overall score is now : " + players[currentPlayer].getOverallScore() + 
-				"\nyour temp score is now " + players[currentPlayer].getTempScore() + "\nyour name is " + players[currentPlayer].getName()
-				+ "\n");
+		//System.out.print("your overall score is now : " + players[currentPlayer].getOverallScore() + 
+		//		"\nyour temp score is now " + players[currentPlayer].getTempScore() + "\nyour name is " + players[currentPlayer].getName()
+		//		+ "\n");
 		
 		updateStats();
 		
@@ -215,6 +209,25 @@ public class Game{
 			
 	}
 
+	
+	/**
+	 * Function for retrieving the current player's turn score
+	 * @return The current player's current turn score
+	 */
+	public int getTurnScore()
+	{
+		return players[currentPlayer].getTempScore();
+	}
+	
+	/**
+	 * Function for retrieving the current player's total score
+	 * @return The current player's total score
+	 */
+	public int getTotalScore()
+	{
+		return players[currentPlayer].getOverallScore();
+	}
+	
 	/**
 	 * getPlayerScore - Returns the result of the current player's stored overall score 
 	 * 			with their temporary score.
@@ -256,15 +269,11 @@ public class Game{
 	 */	
 	private void updateStats()
 	{
-		
 		stats = "";
 		for(int index = 0; index < players.length; index++)
 		{
-			
 			stats += players[index].getName() + " " + players[index].getOverallScore() + "\n";
-			
 		}
-		
 	}
 	
 	/**
@@ -277,9 +286,7 @@ public class Game{
 	 */
 	public String getStats()
 	{
-		
-		return stats;
-		
+		return stats;		
 	}
 	
 }
