@@ -35,9 +35,12 @@ public class Dice
 		list = new int[numOfDice];
 		
 		for(int index = 0; index < list.length; index++)
+		{
+			
 			list[index] = 0;
 		
-		
+		}
+	
 	}
 
 	/**
@@ -50,11 +53,15 @@ public class Dice
 	public int[] rollDice()
 	{
 		// each die is given a random value
-		for(int index = 0; index < numOfDice; index++){
+		for(int index = 0; index < numOfDice; index++)
+		{
+			
 			list[index] = roll();
+			
 		}
 	
 		return list;
+		
 	}
 
 	/**
@@ -74,6 +81,7 @@ public class Dice
 		int value = (rand.nextInt((maximum - minimum) + 1) + minimum); 
 
 		return value;
+		
 	}
 
 }
