@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -15,12 +14,14 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class newGameFrame {
+public class newGameFrame 
+{
 
 	private static int gameWinningScore;
 	private static int numberOfPlayers;
-	
 	private JFrame frame;
+
+	
 
 	/**
 	 * Launch the application.
