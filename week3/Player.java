@@ -83,7 +83,7 @@ public class Player
 
             holdAllowed = true;
     	}
-    	
+   
     	return holdAllowed;
     }
     
@@ -289,7 +289,6 @@ public class Player
     	diceLeft -= count[4];
     	
     	return fiveScore;
-
     }
     
     /*
