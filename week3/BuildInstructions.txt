@@ -22,3 +22,12 @@ To compile:
 
 
 
+
+Easy Run 
+—————————————————
+
+double click the ohSheet.jar
+note must have JRE Java runtime enviornment installed and included in system path to run to this executable
+
+
+
