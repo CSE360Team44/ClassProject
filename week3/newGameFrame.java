@@ -64,7 +64,6 @@ public class newGameFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		
 		//create label of game title,
 		JLabel lblOhSheet = new JLabel("Oh Sheet!");
 		lblOhSheet.setForeground(new Color(102, 0, 153));
@@ -254,5 +253,4 @@ public class newGameFrame {
 	public static int getNumberOfPlayers(){
 		return numberOfPlayers;
 	}
-	
 }
