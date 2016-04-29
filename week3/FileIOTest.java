@@ -20,7 +20,7 @@ public class FileIOTest
 		{
 			System.out.println("test 1 passed");
 		}
-		
+		 
 		
 		/*test 2 trying to read file that does exist*/
 		ArrayList<String> list =  new ArrayList<String>();
