@@ -20,13 +20,17 @@ import java.io.IOException;
  */
 public class Menu 
 {
+	
 	public Game newGame;
 	public Player me;
 	public boolean gameActive = false;
 	public boolean gameFinished = false;
 	
 	/**
-	 * printMenu -  
+	 * printMenu -  If the game is active: prints the player name, overall score, 
+	 * 			temp score, and text of the menu commands roll, new game, 
+	 * 			view stats, view rules, quit, hold, view past winners.
+	 * 			Method will be called in runMenu(). 	
 	 * 
 	 * @param none
 	 */
@@ -35,8 +39,12 @@ public class Menu
 
 		// while the game is active print the following menu
 		if(gameActive)
+		//{
+			
 			System.out.println("Player: " + me.getName() + "\tOverall Score: " + me.getOverallScore() + "\tTemp Score: " + me.getTempScore());
 
+		//}
+		
 		System.out.print("Menu\n" +
 				"1 - roll\n" +
 				"2 - new game\n" +
@@ -46,12 +54,16 @@ public class Menu
 				"6 - hold\n" +
 				"7 - view past winners\n"+
 				"\n\n\n");
+				
 	}
 	
 	/**
-	 * runMenu -  
+	 * runMenu -  Controls the actions of the game. printMenu is called
+	 * 			prompting for user input. User will input 
+	 * 			1 for roll, 2 for new game, 3 to view stats, 
+	 * 			4 to view rules, 5 to quit, 6 to hold, and
+	 * 			7 to view past winners. 
 	 * 	          
-	 * 	
 	 * @throws IOException						
 	 * @param none
 	 */
@@ -95,41 +107,83 @@ public class Menu
 			
 			else if(input == 3)
 			{
+				
 				if(gameActive)
+				{
+					
 					viewStats();
+				
+				}
+				
 				else
+				{
+					
 					System.out.println("No Game Active\n");
+				
+				}
+				
 			}
+			
 			else if(input == 4)
 			{
+				
 				if(gameActive)
+				{
+				
 					System.out.println(viewRules());
+				
+				}
+				
 				else
+				{
+					
 					System.out.println("No Game Active\n");
+					
+				}
+				
 			}
+			
 			else if(input == 6)
 			{
+				
 				if(gameActive)
+				{
 					hold();
+					
+				}
+				
 				else
+				{
+				
 					System.out.println("No Game Active\n");
+				
+				}
+				
 			}
+			
 			else if(input == 7)
 			{
-				
+	
 					viewHistory();
-							}
+			
+			}
 			
 			if(gameFinished ==  true)
 			{
+				
 				gameActive = false;
 				gameFinished = false;
+				
 			}
 			
 			// if game is active, get the current player
 			if(gameActive)
+			{
+			
 				me = newGame.getCurrentPlayer();
 
+			}
+			
 			// menu is printed
 			printMenu();
 
@@ -150,7 +204,9 @@ public class Menu
 	 */
 	public void roll() throws IOException
 	{
+		
 		gameFinished = newGame.gameRoll();
+	
 	}
 
 	/**
@@ -160,16 +216,24 @@ public class Menu
 	 */
 	public void hold()
 	{
+		
 		int currentScore = newGame.getPlayerScore();
 
 		if(newGame.hold())
 		{
+			
 			System.out.println("Turn Held");
 			System.out.println("Current Score: " + currentScore + "\n");
-		}else
-		{
-			System.out.println("Cannot hold turn at this time. Continue Rolling!\n");
+		
 		}
+		
+		else
+		{
+			
+			System.out.println("Cannot hold turn at this time. Continue Rolling!\n");
+		
+		}
+
 	}
 	
 	/**
@@ -179,6 +243,7 @@ public class Menu
 	 */
 	public void newGame()
 	{
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("New Game!");
 		
@@ -193,10 +258,12 @@ public class Menu
 		System.out.println("\n");
 		
 		newGame = new Game(players, winningScore);
+	
 	}
 	
 	/**
-	 * viewStats - 
+	 * viewStats - Prints the statistical data of the players. Statistics include Player name and
+	 * 			player score. 
 	 * 	
 	 * @param none
 	 */
@@ -206,8 +273,8 @@ public class Menu
 	}
 	
 	/**
-	 * viewRules - 
-	 * 	
+	 * viewRules - Prints the rules of the game "Oh Sheet!", and the breaks down 
+	 * 			how points are awarded to a player. 
 	 * @param none
 	 * @return rules String a string that contains the rules, and how points are awarded. 
 	 */
@@ -258,24 +325,24 @@ public class Menu
 	}
 	
 	/**
-	 * main - 
+	 * main - Initializes menu object and runs the menu system by calling runMenu().
 	 * 	
 	 * @throws FileNotFoundException, IOException						
 	 * @param args String[]
 	 */
 	public static void main(String[] args) throws FileNotFoundException,IOException
 	{
+		
 		// menu object start is created
 		Menu start = new Menu();
 
 		// start is run
 		start.runMenu();
-		
-
+	
 	}//main end
 	
 	/**
-	 * viewHistory - 
+	 * viewHistory -  
 	 * 	
 	 * @throws FileNotFoundException						
 	 * @param none
