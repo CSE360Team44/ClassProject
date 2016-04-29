@@ -16,6 +16,7 @@ import java.util.*;
  */
 public class Dice
 {
+	
 	private int minimum = 1;
 	private int maximum = 6;
 
@@ -52,6 +53,7 @@ public class Dice
 	 */
 	public int[] rollDice()
 	{
+		
 		// each die is given a random value
 		for(int index = 0; index < numOfDice; index++)
 		{
