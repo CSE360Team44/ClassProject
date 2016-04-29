@@ -14,11 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 /**
- * Class to implement game play. The game class creates a game with the number of player inputed,
- * 		and input of the winning score. Players are created with a name and their scores 
- * 		updated. Game class checks if the winning score has been reached. 
- * 		Default initialization for private int winningScore, private int currentPlayer,
- * 		private Player players[], and private String stats.
+ * Class to implement game frame this class will hold the actual game window
  * 
  * 
  * @author CSE360 Spring 2016 Team 44: 
