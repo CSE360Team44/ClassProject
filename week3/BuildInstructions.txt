@@ -1,5 +1,24 @@
-To Play "Oh Sheet!":
+"Oh Sheet!"
 
 
-To run the test cases:
+Authors
+—————————————————
+Fernando Avalos
+Maria Castro
+Patricia Evans 
+Anthony Gonzalez
+Ivan Soledad
+
+Description
+—————————————————
+
+A program to play the game, "Oh Sheet!"
+
+
+Compile
+—————————————————
+
+To compile:
+
+
 
