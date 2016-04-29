@@ -1,9 +1,8 @@
 Playing instructions
-1. Start new game.
-2. Enter the number of players.
-3. Enter the score required to win the game.
-	- recommended score between 2000 – 10000 points.
-4. Roll and hold in accordance to the rules in the backlog, until the game is completed.
-
-
-
+1. Start the application
+2. Press New Game.
+3. Enter Game Winning Score (must be 1000 or greater)
+4. Enter the number of players (Must be 2 or greater)
+5. Enter the player names
+6. Player 1 begins by rolling. Game will switch turns to other player automaticaly when appropriate.
+7. Roll and hold in accordance to the rules in the game rules, until the game is completed.
