@@ -94,5 +94,4 @@ public class PlayerTest {
 		assertTrue(newPlayer1.checkWin(1500));
 		assertFalse(newPlayer2.checkWin(1500));
 	}
-
 }
