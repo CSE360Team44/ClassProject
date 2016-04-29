@@ -37,7 +37,7 @@ public class FileIOTest
 			System.out.println("test failed");
 		}
 		catch(IOException e)
-		{
+		{ 
 			System.out.println("test failed");
 		}
 		
