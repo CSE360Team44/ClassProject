@@ -14,6 +14,21 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
 
+/**
+ * Class to implement newgameframe. this is main of application, instantiates UI and runs game, requieres user input to run
+ * 
+ * 
+ * @author CSE360 Spring 2016 Team 44: 
+ * 				      Fernando Avalos,
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
+ * @version April 27, 2016
+ * 
+ */
+
+
 public class newGameFrame 
 {
 
@@ -21,36 +36,47 @@ public class newGameFrame
 	private static int numberOfPlayers;
 	private JFrame frame;
 
-	
-
 	/**
 	 * Launch the application.
 	 */
 	//entry point of our program, creates game window and allows setup to begin
 	public static void main(String[] args) 
 	{
+		
 		EventQueue.invokeLater(new Runnable() 
 		{
+			
 			public void run() 
 			{
+				
 				try 
 				{
+					
 					newGameFrame window = new newGameFrame();
 					window.frame.setVisible(true);
+					
 				} 
 				catch (Exception e)
 				{
+					
 					e.printStackTrace();
+					
 				}
+				
 			}
+			
 		});
+		
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public newGameFrame() {
+	public newGameFrame() 
+	{
+		
 		initialize();
+		
 	}
 
 	/*
@@ -59,6 +85,7 @@ public class newGameFrame
 	// prompts user for needed input, and starts our game window by setting all layour params
 	private void initialize()
 	{
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(204, 204, 255));
 		frame.setBounds(100, 100, 450, 300);
@@ -78,9 +105,16 @@ public class newGameFrame
 		btnNewGame.setBackground(UIManager.getColor("PasswordField.selectionBackground"));
 		btnNewGame.setForeground(new Color(153, 102, 204));
 		btnNewGame.setToolTipText("Start a new game\r\n");
-		btnNewGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	
-				try {
+		
+		btnNewGame.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{	
+				
+				try 
+				{
+					
 					gameWinningScore = getGameWinningScore();
 					numberOfPlayers = getNumOfPlayers();
 					
@@ -88,14 +122,28 @@ public class newGameFrame
 					GameFrame gameFrame = new GameFrame(gameWinningScore, numberOfPlayers);	//PASS gameWinningScore and numberOfPlayers AS ARGUMENTS
 					gameFrame.setVisible(true);
 					
-				}catch(NumberFormatException exception) {
-					 JOptionPane.showMessageDialog(null, "Please enter an integer");
-				}catch(InvalidScoreException exception) {
-					JOptionPane.showMessageDialog(null, "Please use a number greater than 1000.\nSee rules for details");
-				}catch(InvalidNumOfPlayersException exception) {
-					JOptionPane.showMessageDialog(null, "Number of players must be 2 or greater.\nSee rules for details");
 				}
+				catch(NumberFormatException exception) 
+				{
+					
+					 JOptionPane.showMessageDialog(null, "Please enter an integer");
+					 
+				}
+				catch(InvalidScoreException exception) 
+				{
+					
+					JOptionPane.showMessageDialog(null, "Please use a number greater than 1000.\nSee rules for details");
+			
+				}
+				catch(InvalidNumOfPlayersException exception) 
+				{
+					
+					JOptionPane.showMessageDialog(null, "Number of players must be 2 or greater.\nSee rules for details");
+				
+				}
+				
 			}
+			
 		});
 		
 		btnNewGame.setFont(new Font("Impact", Font.PLAIN, 13));
@@ -107,9 +155,16 @@ public class newGameFrame
 		btnViewStats.setBackground(UIManager.getColor("PasswordField.selectionBackground"));
 		btnViewStats.setForeground(new Color(153, 102, 204));
 		btnViewStats.setToolTipText("View previous game winners");
-		btnViewStats.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {
+		
+		btnViewStats.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				
+				try
+				{
+					
 					//Creating and setting Test format
 					JTextArea historyArea = new JTextArea(FileIO.getHistory(), 35, 50);
 					historyArea.setLineWrap(true);
@@ -122,11 +177,18 @@ public class newGameFrame
 					//Displaying rules information
 					JOptionPane.showMessageDialog(null, scrollRules, "History of Winners", JOptionPane.INFORMATION_MESSAGE);
 					
-				} catch (FileNotFoundException e) {
+				} 
+				catch (FileNotFoundException e)
+				{
+					
 					JOptionPane.showMessageDialog(null, "There is no history of winners to view");
+				
 				}
+				
 			}
+			
 		});
+		
 		btnViewStats.setFont(new Font("Impact", Font.PLAIN, 13));
 		btnViewStats.setBounds(152, 150, 106, 42);
 		frame.getContentPane().add(btnViewStats);
@@ -135,8 +197,13 @@ public class newGameFrame
 		btnViewRules.setBackground(UIManager.getColor("PasswordField.selectionBackground"));
 		btnViewRules.setForeground(new Color(153, 102, 204));
 		btnViewRules.setToolTipText("View game rules");
-		btnViewRules.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		
+		btnViewRules.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				
 				//Creating and setting Test format
 				JTextArea rulesArea = new JTextArea(viewRules(), 35, 75);
 				rulesArea.setLineWrap(true);
@@ -148,31 +215,49 @@ public class newGameFrame
 				
 				//Displaying rules information
 				JOptionPane.showMessageDialog(null, scrollRules, "Rules", JOptionPane.INFORMATION_MESSAGE);
+				
 			}
+			
 		});
+		
 		btnViewRules.setFont(new Font("Impact", Font.PLAIN, 13));
 		btnViewRules.setBounds(152, 203, 106, 42);
 		frame.getContentPane().add(btnViewRules);
+		
 	}
 
 	//get game winning score from user input
-	private int getGameWinningScore() throws InvalidScoreException {		
+	private int getGameWinningScore() throws InvalidScoreException
+	{		
+		
 		int gameWinningScore = Integer.parseInt(JOptionPane.showInputDialog("Enter Game Winning Score"));
 			
 		if(gameWinningScore < 1000)
+		{
+			
 			throw new InvalidScoreException();
+		
+		}
 				
 		return gameWinningScore;
+		
 	}
 	
 	//get number of players from user input
-	private int getNumOfPlayers() throws InvalidNumOfPlayersException {
+	private int getNumOfPlayers() throws InvalidNumOfPlayersException 
+	{
+		
 		int numberOfPlayers = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of players"));
 		
 		if(numberOfPlayers < 2)
+		{
+			
 			throw new InvalidNumOfPlayersException();
+			
+		}
 		
 		return numberOfPlayers;
+		
 	}
 
 	/**
@@ -180,7 +265,9 @@ public class newGameFrame
 	 * @return String containing game rules
 	 */
 	//print game rules
-	public static String viewRules() {
+	public static String viewRules() 
+	{
+		
 		return 	"Oh Sheet gains its name from elderly Mexican woman that upon loseing a roll would shout Oh $#!+, but their accencts made it sound like Oh Sheet!\n\n"
 				+ "1. Number of player required: 2+\n\n "
 				+ "2. The turns shifts from player to player if the following happens:\n"
@@ -221,37 +308,57 @@ public class newGameFrame
 				+ "(*)The player loses his/her points if in the dice they roll, no dice of value 1 or 5 are rolled, and if in the dice that are rolled, no triples of any value are rolled.\n\n"
 				+ "(**)For a player to be able to hold, that player must have first amassed a minimum of 1000 points. From this point on this player can hold, if so desired, and let the next player exercise their roll.\n\n"
 				+ "(***)A roll of 1, 2, 3, 4, 5, 6 on the dice is a 1000 points\n"; 
+				
 	}//end viewRules()
 	
 	//we created this to prevent errors in our windwow
 	@SuppressWarnings("serial")
-	private class InvalidScoreException extends Exception{
-		public InvalidScoreException(){
+	private class InvalidScoreException extends Exception
+	{
+		
+		public InvalidScoreException()
+		{
+			
 			super();
+			
 		}
+		
 	}
 	
 	//we created this to prevent errors in our windwow
 	@SuppressWarnings("serial")
-	private class InvalidNumOfPlayersException extends Exception{
-		public InvalidNumOfPlayersException(){
+	private class InvalidNumOfPlayersException extends Exception
+	{
+		
+		public InvalidNumOfPlayersException()
+		{
+			
 			super();
+			
 		}
+		
 	}
 	
 	/**
 	 * Function to return game winning score set by the players
 	 * @return Game winning score
 	 */
-	public static int getWinningScore(){
+	public static int getWinningScore()
+	{
+		
 		return gameWinningScore;
+		
 	}
 	
 	/**
 	 * Function to return number of players set by the players
 	 * @return Number of players
 	 */
-	public static int getNumberOfPlayers(){
+	public static int getNumberOfPlayers()
+	{
+		
 		return numberOfPlayers;
+		
 	}
+	
 }
