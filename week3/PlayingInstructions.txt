@@ -1,0 +1,11 @@
+Playing instructions
+1. Start new game.
+2. Enter the number of players.
+3. Enter the score required to win the game.
+	- recommended score between 2000 – 10000 points.
+4. Roll and hold in accordance to the rules in the backlog, until the game is completed.
+
+
+NOTE: the following features are not yet implemented:
+* View statistics
+* View rules
