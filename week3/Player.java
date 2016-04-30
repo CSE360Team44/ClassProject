@@ -41,7 +41,7 @@ public class Player
     }
     
     /**
-     * getTempScore - Function to retrieve temporary score of player
+     * getTempScore - Retrieves temporary score of player. 
      * @return Temporary score of the player
      */
     public int getTempScore()
@@ -52,7 +52,7 @@ public class Player
     }
     
     /**
-     * getoverallScore - Function to retrieve player's overall score.
+     * getoverallScore - Retrieve player's overall score.
      * 
      * @param none
      * @return Overall score of the player
@@ -66,6 +66,7 @@ public class Player
     
     /**
      * setTempScore - Sets player's temporary score.
+     * 
      * @param score present score value
      */
     public void setTempScore(int score)
@@ -89,6 +90,7 @@ public class Player
     
     /**
      * getName - Function to retrieve player's name
+     * 
      * @return Player's name
      */
     public String getName()
@@ -99,7 +101,8 @@ public class Player
     }   
     
     /**
-     * hold - Function to allow the player to hold and update the player's overall score with the temporary current turn score
+     * hold - Function to allow the player to hold and update the player's overall score 
+     * 			with the temporary current turn score.
      * @return boolean indicating whether the player is allowed to hold or not
      */
     public boolean hold()
@@ -124,7 +127,9 @@ public class Player
     }
     
     /**
-    * turnEnd - is set to false for the next player to indicate their turn is not over
+    * turnEnd - is set to false for the player to indicate their turn is not over.
+    * 
+    * @param none
     */
     public void resetTurn()
     {
@@ -135,6 +140,8 @@ public class Player
 
     /**
      * roll - Dice roll action
+     * 
+     * @param none
      */
     public void roll()
     {  
@@ -157,6 +164,12 @@ public class Player
     }
     
     
+    /**
+     * getRoll - Rolls dice that player has left
+     * 
+     * @param none
+     * @return myRolls array of 
+     */
     public int[] getRoll()
     {
     	
@@ -166,6 +179,8 @@ public class Player
     
     /*
      * computeScore - Rolls dice that player has left
+     *
+     * @param diceResult array of the results of the dice rolled. 
      * @return myDice.rollDice() array of numbers 1 - 6 rolled
      */
     private int computeScore(int diceResult[])
