@@ -1,5 +1,3 @@
-package a;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.util.*; 
@@ -62,6 +60,7 @@ public class FileIOTest
 		
 	}
 
+	//Testing if appending to file is functional
 	@Test
 	public void testAppendIntToFile()
 	{
