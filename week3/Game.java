@@ -13,12 +13,12 @@ import java.util.ArrayList;
  * 
  * 
  * @author CSE360 Spring 2016 Team 44: 
- * 				      Fernando Avalos,
+ * 				       Fernando Avalos,
  * 		    		       Maria Castro,
  * 		    	   	       Patricia Evans,
  * 		    		       Anthony Gonzalez,
  * 		    		       Ivan Soledad.
- * @version April 27, 2016
+ * @version April 29, 2016
  * 
  */
 public class Game
@@ -111,10 +111,6 @@ public class Game
 		
 		}
 		
-		//System.out.print("your overall score is now : " + players[currentPlayer].getOverallScore() + 
-		//		"\nyour temp score is now " + players[currentPlayer].getTempScore() + "\nyour name is " + players[currentPlayer].getName()
-		//		+ "\n");
-		
 		updateStats();
 		
 		return gameFinished;
@@ -144,6 +140,7 @@ public class Game
 	*/
 	public boolean hold()
 	{
+		
 		// held = whether one has held
 		boolean held = false;
 
@@ -160,31 +157,6 @@ public class Game
 		
 	}
 	
-	/**
-	 * Function that checks if the game is over
-	 * @return
-	 */
-	private void gameOver() throws FileNotFoundException
-	{
-		
-
-		PrintWriter outputFile = new PrintWriter ("View Stats.txt");
-		
-		// printStats is called to print the players' scores and display the winner
-		for(int index = 0; index < players.length; index++)
-		{
-			
-			outputFile.println(players[index].getName() + " " + players[index].getOverallScore() + "\n");
-
-		}
-		
-		printStats();
-		outputFile.close();
-		
-	}
-	
-
-
 	/**
 	 * nextPlayer - The turn is reset for the current player and the index variable
 	 * 			currentPlayer is incremented to move to the next player in
