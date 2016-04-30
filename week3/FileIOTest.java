@@ -5,11 +5,14 @@ import java.io.*;
 
 public class FileIOTest
 {
+	
+	//Test 1: Testing readFile to read a file that does not exist.
+	//Test 2: Testing readFile to append to a file that doesn not exist. 
 	@Test
 	public void testReadFile()
 	{
 		
-		/*test 1 trying to read file that doestn exist*/
+		/*Test 1 trying to read file that doesn't exist*/
 		try
 		{
 			
@@ -24,7 +27,7 @@ public class FileIOTest
 			
 		}
 		 
-		/*test 2 trying to read file that does exist*/
+		/*Test 2 trying to read file that does exist*/
 		ArrayList<String> list =  new ArrayList<String>();
 		String str="";
 		
@@ -58,7 +61,7 @@ public class FileIOTest
 		
 	}
 
-	//Testing if appending to file is functional
+	//Testing appendIntToFile if appending to file is functional.
 	@Test
 	public void testAppendIntToFile()
 	{
