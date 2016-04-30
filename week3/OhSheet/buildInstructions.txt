@@ -1,0 +1,43 @@
+"Oh Sheet!"
+
+
+Authors
+—————————————————
+Fernando Avalos
+Maria Castro
+Patricia Evans 
+Anthony Gonzalez
+Ivan Soledad
+
+
+
+
+
+Description
+—————————————————
+A program to play the game, "Oh Sheet!"
+
+
+
+
+
+Compile
+—————————————————
+Option 1:
+    Load each file into an Eclipse project and run the newGameFrame file.
+    
+Option 2:
+    On a computer with the Java JDK installed, open a cmd/terminal and change directory to the directory containing the java files.
+    Type javac *.java
+    This will Compile all java files in the directory.
+    To run the game, type java newGameFrame
+
+
+
+
+Easy Run 
+—————————————————
+double click the ohSheet.jar
+note: must have JRE Java runtime enviornment installed and included in system path to run to this executable
+
+
