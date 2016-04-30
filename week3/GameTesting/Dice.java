@@ -66,7 +66,7 @@ public class Dice
 		
 	}
 
-	/**
+	/*
 	 * roll - private method that generates a random number from 1 (the minimum value of a die)
 	 * 				to 6 (the maximum value of a die).
 	 * 				
