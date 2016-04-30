@@ -48,7 +48,7 @@ public class Game
 		
 	}
 
-	/**
+	/*
 	 * setNames - iterates through the player array inserting the
 	 * 		name entered by the user. 
 	 * 						
@@ -118,11 +118,11 @@ public class Game
 	}
 
 	/**
-	* getCurrentPlayer - Returns the current player in the players array using the currentPlayer
-	* 			variable as the index.
-	* 
-	* @return players[currentPlayer] Player the current player contained in the players array
-	*/
+	 * getCurrentPlayer - Returns the current player in the players array using the currentPlayer
+	 * 			variable as the index.
+	 * 
+	 * @return players[currentPlayer] Player the current player contained in the players array
+	 */
 	public Player getCurrentPlayer()
 	{
 		
@@ -131,13 +131,13 @@ public class Game
 	}
 	
 	/**
-	* hold - Returns a value of true if the player holds dice, and false if the player continues
-	* 			with their rolls. If the player holds, the score is recorded and the 
-	* 			player will have their turn. 
-	* 
-	* @return held boolean a flag that will become true if the player holds on their dice roll 
-	* 			and false if the player continues to roll. 
-	*/
+	 * hold - Returns a value of true if the player holds dice, and false if the player continues
+	 * 			with their rolls. If the player holds, the score is recorded and the 
+	 * 			player will have their turn. 
+	 * 
+	 * @return held boolean a flag that will become true if the player holds on their dice roll 
+	 * 			and false if the player continues to roll. 
+	 */
 	public boolean hold()
 	{
 		
@@ -157,7 +157,7 @@ public class Game
 		
 	}
 	
-	/**
+	/*
 	 * nextPlayer - The turn is reset for the current player and the index variable
 	 * 			currentPlayer is incremented to move to the next player in
 	 * 			game. If currentPlayer index is incremented greater than
@@ -183,8 +183,10 @@ public class Game
 	}
 
 	/**
-	 * Function for retrieving the current player's turn score
-	 * @return The current player's current turn score
+	 * getTurnScore - Function for retrieving the current player's turn score.
+	 * 
+	 * @param none
+	 * @return The current player's current turn score.
 	 */
 	public int getTurnScore()
 	{
@@ -194,8 +196,10 @@ public class Game
 	}
 	
 	/**
-	 * Function for retrieving the current player's total score
-	 * @return The current player's total score
+	 * getTotalScore - Function for retrieving the current player's total score.
+	 * 
+	 * @param none
+	 * @return The current player's total score.
 	 */
 	public int getTotalScore()
 	{
@@ -221,7 +225,7 @@ public class Game
 		
 	}
 	
-	/**
+	/*
 	 * storeResult - The winner's name is written to the file "History.txt". 
 	 * 			"History.txt" can be appended and will contain all
 	 * 			winners of each game played. 
@@ -236,7 +240,7 @@ public class Game
 		
 	}
 	
-	/**
+	/*
 	 * updateStats - Iterates through the players array and appends to the string variable, stats. 
 	 * 			The statistics of each player is on a new line and has the player name
 	 * 			and score. 
