@@ -168,6 +168,7 @@ public class Game
 	 */
 	private void nextPlayer()
 	{
+		
 		players[currentPlayer].resetTurn();
 
 		currentPlayer++;
@@ -181,7 +182,6 @@ public class Game
 			
 	}
 
-	
 	/**
 	 * Function for retrieving the current player's turn score
 	 * @return The current player's current turn score
@@ -245,6 +245,7 @@ public class Game
 	 */	
 	private void updateStats()
 	{
+		
 		stats = "";
 		
 		for(int index = 0; index < players.length; index++)
