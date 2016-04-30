@@ -19,10 +19,10 @@ import java.awt.Color;
  * 
  * @author CSE360 Spring 2016 Team 44: 
  * 				      Fernando Avalos,
- * 		    		       Maria Castro,
- * 		    	   	       Patricia Evans,
- * 		    		       Anthony Gonzalez,
- * 		    		       Ivan Soledad.
+ * 		    		      Maria Castro,
+ * 		    	   	      Patricia Evans,
+ * 		    		      Anthony Gonzalez,
+ * 		    		      Ivan Soledad.
  * @version April 29, 2016
  * 
  */
@@ -57,6 +57,7 @@ public class GameFrame extends JFrame
 					frame.setVisible(true);
 					
 				} 
+	
 				catch (Exception e) 
 				{
 					
@@ -70,7 +71,6 @@ public class GameFrame extends JFrame
 		
 	}
 	
-
 	/**
 	 * Create the frame.
 	 */
@@ -143,7 +143,6 @@ public class GameFrame extends JFrame
 			
 		});
 		
-		
 		btnHold.setBounds(260, 106, 122, 42);
 		contentPane.add(btnHold);
 		
@@ -207,8 +206,10 @@ public class GameFrame extends JFrame
 						//print the player name and what they rolled
 						JOptionPane.showMessageDialog(null, newGame.getCurrentPlayer().getName() + " rolled " + tempStr);
 				
-					}	
+					}
+					
 				} 
+				
 				catch(IOException exception)
 				{
 					
@@ -225,6 +226,7 @@ public class GameFrame extends JFrame
 					System.exit(0);
 					
 				}
+				
 				else 
 				{
 					
@@ -239,7 +241,6 @@ public class GameFrame extends JFrame
 		});
 		
 		//set params for buttons
-		
 		btnRoll.setBounds(260, 36, 122, 42);
 		contentPane.add(btnRoll);
 
