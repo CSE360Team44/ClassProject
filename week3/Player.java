@@ -28,8 +28,8 @@ public class Player
     
     /** 
      * Player - Constructor passes the player's name to initialize the name variable. 
-     * 			Initializes the overallScore to 0, the tempScore to 0, 
-     * 			diceLeft to 6, and turnEnd to false. 
+     * 		Initializes the overallScore to 0, the tempScore to 0, 
+     * 		diceLeft to 6, and turnEnd to false. 
      * 			
      * @param name Name of player object
      */
@@ -46,8 +46,7 @@ public class Player
     
     /**
      * getTempScore - Retrieves temporary score of player during rolls. 
-     * 
-     * @param none 
+     *
      * @return Temporary score of the player
      */
     public int getTempScore()
@@ -60,7 +59,6 @@ public class Player
     /**
      * getoverallScore - Retrieve player's overall score after rolling dice has ended.
      * 
-     * @param none
      * @return Overall score of the player after a rolling dice has ended.
      */
     public int getOverallScore()
@@ -73,7 +71,7 @@ public class Player
     /**
      * setTempScore - Sets player's temporary score.
      * 
-     * @param score present score value from a roll. 
+     * @param score Present score value from a roll. 
      */
     public void setTempScore(int score)
     {
@@ -108,7 +106,8 @@ public class Player
     
     /**
      * hold - Function to allow the player to hold and update the player's overall score 
-     * 			with the temporary current turn score.
+     * 		with the temporary current turn score.
+     * 
      * @return boolean indicating whether the player is allowed to hold or not.
      */
     public boolean hold()
@@ -135,7 +134,6 @@ public class Player
     /**
     * turnEnd - is set to false to indicate the player turn is not over.
     * 
-    * @param none
     */
     public void resetTurn()
     {
@@ -145,9 +143,8 @@ public class Player
     }
 
     /**
-     * roll - 
+     * roll - Rolls the player's dice and adds result to tempScore
      * 
-     * @param none
      */
     public void roll()
     {  
@@ -160,8 +157,7 @@ public class Player
     /*
      * tempRolls - Rolls dice that player has left in their turn.
      *
-     * @param none
-     * @return myDice.rollDice() array of numbers 1 - 6 rolled
+     * @return Array of numbers 1 - 6 rolled
      */
     private int[] tempRoll()
     {
@@ -173,10 +169,9 @@ public class Player
     
     
     /**
-     * getRoll - Rolls the remaining dice the player is able to roll after 
+     * getRoll - getter method for retrieving player's roll
      * 
-     * @param none
-     * @return myRolls array of 
+     * @return myRolls array of player's roll
      */
     public int[] getRoll()
     {
@@ -189,7 +184,7 @@ public class Player
      * computeScore - Rolls dice that player has left
      *
      * @param diceResult array of the results of the dice rolled. 
-     * @return myDice.rollDice() array of numbers 1 - 6 rolled
+     * @return returns score of player's roll
      */
     private int computeScore(int diceResult[])
     {
@@ -208,9 +203,9 @@ public class Player
     }
     	
     /*
-     * analyze - 
+     * analyze - Uses the count array to determine the amount of puts roled by the player
      * @param count array of occurrences of each dice number
-     * @return score score value
+     * @return score Value of the player's roll
      */
     private int analyze(int[] count)
     {
@@ -614,8 +609,7 @@ public class Player
     /**
     * getTurnEnd - A flag function to determine whether a player's turn has ended.
     * 
-    * @param none
-    * @return turnEnd boolean if false the turn not has ended. If true the turn has not ended. 
+    * @return turnEnd boolean of it the turn has ended
     */
     public boolean getTurnEnd()
     {
