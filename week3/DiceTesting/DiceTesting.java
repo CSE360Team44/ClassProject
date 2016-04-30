@@ -14,7 +14,7 @@ import java.util.*;
  * 		    	   	       Patricia Evans,
  * 		    		       Anthony Gonzalez,
  * 		    		       Ivan Soledad.
- * @version April 15, 2016
+ * @version April 29, 2016
  * 
  */
 public class DiceTesting
@@ -28,7 +28,7 @@ public class DiceTesting
 	private int riggedList[];
 
 	/**
-	 * DiceTesing - Constructor initializes the number of dice being rolled and 
+	 * DiceTesting - Constructor initializes the number of dice being rolled and 
 	 * 			the array size of list to the number of dice being rolled. 
 	 * 			Also implements unit testing or random dice rolls and rigged dice rolls. 
 	 * 				
@@ -75,7 +75,8 @@ public class DiceTesting
 		
 		String expectedTestRoll = "";
 		
-		for(int index = 0; index < numOfDice; index++){
+		for(int index = 0; index < numOfDice; index++)
+		{
 			
 			expectedTestRoll += "3 ";
 			
@@ -171,7 +172,7 @@ public class DiceTesting
 		
 	}
 
-	/**
+	/*
 	 * roll - private method that generates a random number from 1 (the minimum value of a die)
 	 * 				to 6 (the maximum value of a die).
 	 * 				
@@ -189,7 +190,7 @@ public class DiceTesting
 
 	}
 	
-	/**
+	/*
 	 * riggedRoll - private method used only for testing purposes to compare
 	 * 					actual and tested values. Sets value equal to input 
 	 * 					(an integer within range of 1 - 6).
@@ -259,7 +260,6 @@ public class DiceTesting
 	 * 						
 	 * @param expectedRoggedRollDice String expected rigged rolls.
 	 * 		  actualRiggedRollDice String actual rigged rolls.
-	 * @return none 
 	 */
 	public void testingRiggedRollDice(String expectedRiggedRollDice, String actualRiggedRollDice){
 		
@@ -305,14 +305,14 @@ public class DiceTesting
 		
 		String listString = "";
 		
-			for(int index = 0; index < numOfDice; index++)
-			{
+		for(int index = 0; index < numOfDice; index++)
+		{
 			
-				int rolledNum = rollList[index];
-				String rollNumString = Integer.toString(rolledNum);
-				listString = listString + rollNumString + " ";
+			int rolledNum = rollList[index];
+			String rollNumString = Integer.toString(rolledNum);
+			listString = listString + rollNumString + " ";
 				
-			}
+		}
 					
 		return listString;
 		
