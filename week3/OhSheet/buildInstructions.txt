@@ -1,6 +1,7 @@
 "Oh Sheet!"
 
 
+
 Authors
 —————————————————
 Fernando Avalos
@@ -10,15 +11,9 @@ Anthony Gonzalez
 Ivan Soledad
 
 
-
-
-
 Description
 —————————————————
-A program to play the game, "Oh Sheet!"
-
-
-
+A program to play the dice game, "Oh Sheet!".
 
 
 Compile
@@ -33,11 +28,7 @@ Option 2:
     To run the game, type java newGameFrame
 
 
-
-
 Easy Run 
 —————————————————
 double click the ohSheet.jar
 note: must have JRE Java runtime enviornment installed and included in system path to run to this executable
-
-
