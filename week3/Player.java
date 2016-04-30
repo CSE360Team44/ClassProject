@@ -1,14 +1,32 @@
+/**
+ * Class to implement player actions in the game. The player class 
+ * 		Default initialization for private int overallScore, private int tempScore,
+ * 		private String name, and private int diceLeft, private boolean turnEnd, 
+ * 		private int myRolls[].
+ * 
+ * 
+ * @author CSE360 Spring 2016 Team 44: 
+ * 				       Fernando Avalos,
+ * 		    		       Maria Castro,
+ * 		    	   	       Patricia Evans,
+ * 		    		       Anthony Gonzalez,
+ * 		    		       Ivan Soledad.
+ * @version April 29, 2016
+ * 
+ */
+
 public class Player
 {
-	private int overallScore;
-	private int tempScore;
+	
+    private int overallScore;
+    private int tempScore;
     private String name;
     private int diceLeft;
     private boolean turnEnd;
     private int myRolls[];
     
     /** 
-     * Constructor of Player object
+     * Player - Constructor passes the player's name. 
      * @param name Name of player object
      */
     public Player(String name)
@@ -21,7 +39,7 @@ public class Player
     }
     
     /**
-     * Function to retrieve temporary score of player
+     * getTempScore - Function to retrieve temporary score of player
      * @return Temporary score of the player
      */
     public int getTempScore()
@@ -315,7 +333,7 @@ public class Player
     	return sixScore;
     }
     
-   /*
+    /*
      * Assign score depending if 1, 2, 3, 4, 5, 6 is rolled
      * @param count array of occurrences of each dice number
      * @return allScore score depending if 1, 2, 3, 4, 5, 6 is rolled
@@ -326,39 +344,59 @@ public class Player
     	
     	for(int index = 0; index < count.length; index++)
     	{
+    		
     		if(count[index] != 1)
+    		{
+    			
     			allScore = 0;
+    			
+    		}
+    		
     	}
     	
     	if(allScore == 1000)
+    	{
+    		
     		diceLeft = 0;
+    		
+    	}
     	
-    	return allScore;    
+    	return allScore;   
+    	
     }
 
     /**
-    * Returns turnEnd
+    * getTurnEnd - 
     * @return turnEnd status of the turn
     */
     public boolean getTurnEnd()
     {
+    	
         return turnEnd;
+        
     }
     
     /**
-    * Checks for a win
+    * checkWin - Checks for a win
     * @param winningScore score needed to win the game
     * @return win boolean value that indicates whether there's been a win
     */
     public boolean checkWin(int winningScore)
     {
+    	
         boolean win = false;
 
         // if the overall score and the temporary score added together is greater than or equal to the winning score
         // win is set to true, indicating a win
         if(tempScore + overallScore >= winningScore)
+        {
+            
             win = true;
+            
+        }
 
         return win;
+
     }
+
 }
