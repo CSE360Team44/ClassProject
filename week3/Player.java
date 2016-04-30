@@ -1,5 +1,6 @@
 /**
- * Class to implement player actions in the game. The player class 
+ * Class to implement player actions in the game. The player class sets and gets the temporary 
+ * 		and overall score, 
  * 		Default initialization for private int overallScore, private int tempScore,
  * 		private String name, and private int diceLeft, private boolean turnEnd, 
  * 		private int myRolls[].
@@ -26,7 +27,10 @@ public class Player
     private int myRolls[];
     
     /** 
-     * Player - Constructor passes the player's name. 
+     * Player - Constructor passes the player's name to initialize the name variable. 
+     * 			Initializes the overallScore to 0, the tempScore to 0, 
+     * 			diceLeft to 6, and turnEnd to false. 
+     * 			
      * @param name Name of player object
      */
     public Player(String name)
@@ -41,7 +45,9 @@ public class Player
     }
     
     /**
-     * getTempScore - Retrieves temporary score of player. 
+     * getTempScore - Retrieves temporary score of player during rolls. 
+     * 
+     * @param none 
      * @return Temporary score of the player
      */
     public int getTempScore()
@@ -52,10 +58,10 @@ public class Player
     }
     
     /**
-     * getoverallScore - Retrieve player's overall score.
+     * getoverallScore - Retrieve player's overall score after rolling dice has ended.
      * 
      * @param none
-     * @return Overall score of the player
+     * @return Overall score of the player after a rolling dice has ended.
      */
     public int getOverallScore()
     {
@@ -67,7 +73,7 @@ public class Player
     /**
      * setTempScore - Sets player's temporary score.
      * 
-     * @param score present score value
+     * @param score present score value from a roll. 
      */
     public void setTempScore(int score)
     {
@@ -79,7 +85,7 @@ public class Player
     /**
      * setOverallScore - Overall score is set to present score.
      * 
-     * @param score Score to be set
+     * @param score Score to be set after rolling.
      */
     public void setOverallScore(int score)
     {
@@ -89,9 +95,9 @@ public class Player
     }
     
     /**
-     * getName - Function to retrieve player's name
+     * getName - Return the name of a player. 
      * 
-     * @return Player's name
+     * @return String that contains the name of a player. 
      */
     public String getName()
     {
@@ -103,7 +109,7 @@ public class Player
     /**
      * hold - Function to allow the player to hold and update the player's overall score 
      * 			with the temporary current turn score.
-     * @return boolean indicating whether the player is allowed to hold or not
+     * @return boolean indicating whether the player is allowed to hold or not.
      */
     public boolean hold()
     {
@@ -127,7 +133,7 @@ public class Player
     }
     
     /**
-    * turnEnd - is set to false for the player to indicate their turn is not over.
+    * turnEnd - is set to false to indicate the player turn is not over.
     * 
     * @param none
     */
@@ -139,7 +145,7 @@ public class Player
     }
 
     /**
-     * roll - Dice roll action
+     * roll - 
      * 
      * @param none
      */
@@ -152,7 +158,9 @@ public class Player
     }
    
     /*
-     * Rolls dice that player has left
+     * tempRolls - Rolls dice that player has left in their turn.
+     *
+     * @param none
      * @return myDice.rollDice() array of numbers 1 - 6 rolled
      */
     private int[] tempRoll()
@@ -165,7 +173,7 @@ public class Player
     
     
     /**
-     * getRoll - Rolls dice that player has left
+     * getRoll - Rolls the remaining dice the player is able to roll after 
      * 
      * @param none
      * @return myRolls array of 
@@ -571,6 +579,7 @@ public class Player
     
     /*
      * doAll - Assign score depending if 1, 2, 3, 4, 5, 6 is rolled
+     *
      * @param count array of occurrences of each dice number
      * @return allScore score depending if 1, 2, 3, 4, 5, 6 is rolled
      */
@@ -603,8 +612,10 @@ public class Player
     }
 
     /**
-    * getTurnEnd - 
-    * @return turnEnd status of the turn
+    * getTurnEnd - A flag function to determine whether a player's turn has ended.
+    * 
+    * @param none
+    * @return turnEnd boolean if false the turn not has ended. If true the turn has not ended. 
     */
     public boolean getTurnEnd()
     {
